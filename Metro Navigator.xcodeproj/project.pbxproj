@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA2C65B21EABC5B700D735EF /* Kiev.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA2C65B11EABC5B700D735EF /* Kiev.plist */; };
 		BA4A93051EA4D7BD00E10055 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4A93041EA4D7BD00E10055 /* AppDelegate.swift */; };
 		BA4A93071EA4D7BD00E10055 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4A93061EA4D7BD00E10055 /* ViewController.swift */; };
 		BA4A930A1EA4D7BD00E10055 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4A93081EA4D7BD00E10055 /* Main.storyboard */; };
 		BA4A930C1EA4D7BD00E10055 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4A930B1EA4D7BD00E10055 /* Assets.xcassets */; };
 		BA4A930F1EA4D7BD00E10055 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4A930D1EA4D7BD00E10055 /* LaunchScreen.storyboard */; };
+		BAD25B0E1EAA84B80011E13E /* SubwayMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD25B0D1EAA84B80011E13E /* SubwayMapView.swift */; };
+		BAD6645B1EAE68150018FF66 /* Subway.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD6645A1EAE68150018FF66 /* Subway.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA2C65B11EABC5B700D735EF /* Kiev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Kiev.plist; sourceTree = "<group>"; };
 		BA4A93011EA4D7BD00E10055 /* Metro Navigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Metro Navigator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4A93041EA4D7BD00E10055 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA4A93061EA4D7BD00E10055 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		BA4A930B1EA4D7BD00E10055 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA4A930E1EA4D7BD00E10055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA4A93101EA4D7BD00E10055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAD25B0D1EAA84B80011E13E /* SubwayMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubwayMapView.swift; sourceTree = "<group>"; };
+		BAD6645A1EAE68150018FF66 /* Subway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subway.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +60,11 @@
 		BA4A93031EA4D7BD00E10055 /* Metro Navigator */ = {
 			isa = PBXGroup;
 			children = (
+				BA2C65B11EABC5B700D735EF /* Kiev.plist */,
 				BA4A93041EA4D7BD00E10055 /* AppDelegate.swift */,
 				BA4A93061EA4D7BD00E10055 /* ViewController.swift */,
+				BAD25B0D1EAA84B80011E13E /* SubwayMapView.swift */,
+				BAD6645A1EAE68150018FF66 /* Subway.swift */,
 				BA4A93081EA4D7BD00E10055 /* Main.storyboard */,
 				BA4A930B1EA4D7BD00E10055 /* Assets.xcassets */,
 				BA4A930D1EA4D7BD00E10055 /* LaunchScreen.storyboard */,
@@ -127,6 +136,7 @@
 				BA4A930F1EA4D7BD00E10055 /* LaunchScreen.storyboard in Resources */,
 				BA4A930C1EA4D7BD00E10055 /* Assets.xcassets in Resources */,
 				BA4A930A1EA4D7BD00E10055 /* Main.storyboard in Resources */,
+				BA2C65B21EABC5B700D735EF /* Kiev.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +147,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD25B0E1EAA84B80011E13E /* SubwayMapView.swift in Sources */,
 				BA4A93071EA4D7BD00E10055 /* ViewController.swift in Sources */,
+				BAD6645B1EAE68150018FF66 /* Subway.swift in Sources */,
 				BA4A93051EA4D7BD00E10055 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +275,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5JN378GWYC;
 				INFOPLIST_FILE = "Metro Navigator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "intellogic.Metro-Navigator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -276,6 +289,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5JN378GWYC;
 				INFOPLIST_FILE = "Metro Navigator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "intellogic.Metro-Navigator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -302,6 +316,7 @@
 				BA4A93151EA4D7BD00E10055 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
