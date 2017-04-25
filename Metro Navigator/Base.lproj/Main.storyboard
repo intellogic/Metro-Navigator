@@ -34,10 +34,10 @@
                                         <rect key="frame" x="8" y="8" width="153" height="37.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNu-kd-yjy">
-                                                <rect key="frame" x="0.0" y="0.0" width="15.5" height="37.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="15" height="37.5"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gwf-2o-mEn">
-                                                        <rect key="frame" x="2.5" y="-0.5" width="10.5" height="37.5"/>
+                                                        <rect key="frame" x="2.5" y="0.0" width="10.5" height="37"/>
                                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     </imageView>
                                                 </subviews>
@@ -49,18 +49,28 @@
                                                     <constraint firstItem="Gwf-2o-mEn" firstAttribute="height" secondItem="FNu-kd-yjy" secondAttribute="height" id="ivX-NS-Dt8"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Звiдки" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPR-tZ-Odh">
-                                                <rect key="frame" x="15.5" y="0.0" width="137.5" height="37.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Звiдки" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPR-tZ-Odh">
+                                                <rect key="frame" x="15" y="0.0" width="114.5" height="37.5"/>
                                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfx-am-CIF">
+                                                <rect key="frame" x="129.5" y="0.0" width="23.5" height="37.5"/>
+                                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" image="list_icon"/>
+                                                <connections>
+                                                    <action selector="cancelSourceChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="onS-Rr-ZUh"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="FNu-kd-yjy" firstAttribute="leading" secondItem="BDM-lh-0f0" secondAttribute="leading" id="OBM-75-m2c"/>
+                                            <constraint firstItem="hPR-tZ-Odh" firstAttribute="leading" secondItem="FNu-kd-yjy" secondAttribute="trailing" id="QLr-Xi-SyC"/>
                                             <constraint firstItem="hPR-tZ-Odh" firstAttribute="height" secondItem="BDM-lh-0f0" secondAttribute="height" id="fOX-fx-DyI"/>
-                                            <constraint firstItem="hPR-tZ-Odh" firstAttribute="width" secondItem="BDM-lh-0f0" secondAttribute="width" multiplier="0.9" id="vEx-c2-9uM"/>
+                                            <constraint firstItem="FNu-kd-yjy" firstAttribute="width" secondItem="BDM-lh-0f0" secondAttribute="width" multiplier="0.1" id="rIq-Rr-hef"/>
+                                            <constraint firstItem="hPR-tZ-Odh" firstAttribute="width" secondItem="BDM-lh-0f0" secondAttribute="width" multiplier="0.75" id="vEx-c2-9uM"/>
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ox-qd-evV">
@@ -75,10 +85,10 @@
                                         <rect key="frame" x="214.5" y="8" width="152.5" height="37.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHb-oi-Rbk">
-                                                <rect key="frame" x="0.0" y="0.0" width="15.5" height="37.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="15" height="37.5"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fxF-Dg-FU0">
-                                                        <rect key="frame" x="2.5" y="-0.5" width="10.5" height="37.5"/>
+                                                        <rect key="frame" x="2.5" y="0.0" width="11" height="37"/>
                                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     </imageView>
                                                 </subviews>
@@ -90,17 +100,26 @@
                                                     <constraint firstItem="fxF-Dg-FU0" firstAttribute="centerY" secondItem="kHb-oi-Rbk" secondAttribute="centerY" id="zzM-ug-n7f"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Куди" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2s8-aN-X3R">
-                                                <rect key="frame" x="15.5" y="0.0" width="137" height="37.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Куди" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2s8-aN-X3R">
+                                                <rect key="frame" x="15" y="0.0" width="114.5" height="37.5"/>
                                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VF2-AC-N1L">
+                                                <rect key="frame" x="129.5" y="0.0" width="23" height="37.5"/>
+                                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" image="list_icon"/>
+                                                <connections>
+                                                    <action selector="cancelDestinationChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QhS-ha-eyJ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="2s8-aN-X3R" firstAttribute="height" secondItem="xV8-IG-b9K" secondAttribute="height" id="ULt-QM-xNV"/>
-                                            <constraint firstItem="2s8-aN-X3R" firstAttribute="width" secondItem="xV8-IG-b9K" secondAttribute="width" multiplier="0.9" id="ZRM-BD-nB5"/>
+                                            <constraint firstItem="2s8-aN-X3R" firstAttribute="width" secondItem="xV8-IG-b9K" secondAttribute="width" multiplier="0.75" id="ZRM-BD-nB5"/>
+                                            <constraint firstItem="kHb-oi-Rbk" firstAttribute="width" secondItem="xV8-IG-b9K" secondAttribute="width" multiplier="0.1" id="soj-9P-9zb"/>
                                             <constraint firstItem="kHb-oi-Rbk" firstAttribute="leading" secondItem="xV8-IG-b9K" secondAttribute="leading" id="vnf-lv-IMd"/>
                                         </constraints>
                                     </stackView>
@@ -137,9 +156,11 @@
                     <connections>
                         <outlet property="destinationLabel" destination="2s8-aN-X3R" id="Wwc-gN-HlY"/>
                         <outlet property="destinationLinePoint" destination="fxF-Dg-FU0" id="zbJ-IC-xpS"/>
+                        <outlet property="destinationListOrCancelButton" destination="VF2-AC-N1L" id="ZSr-Y8-Apj"/>
                         <outlet property="scrollView" destination="a0y-Li-hfP" id="Wid-iK-FiD"/>
                         <outlet property="sourceLabel" destination="hPR-tZ-Odh" id="Waz-sw-5qX"/>
                         <outlet property="sourceLinePoint" destination="Gwf-2o-mEn" id="93Q-04-GPu"/>
+                        <outlet property="sourceListOrCancelButton" destination="cfx-am-CIF" id="JtS-GE-0wu"/>
                         <outlet property="swapButton" destination="7ox-qd-evV" id="KwR-MP-LuB"/>
                     </connections>
                 </viewController>
@@ -149,6 +170,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="list_icon" width="48" height="48"/>
         <image name="swap_button" width="48" height="48"/>
     </resources>
 </document>

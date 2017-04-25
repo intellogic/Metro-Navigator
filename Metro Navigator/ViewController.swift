@@ -9,7 +9,6 @@
 import UIKit
 
 
-
 class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var sourceLabel: UILabel!
@@ -17,12 +16,44 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var swapButton: UIButton!
     @IBOutlet weak var destinationLinePoint: UIImageView!
     @IBOutlet weak var destinationLabel: UILabel!
+    @IBOutlet weak var sourceListOrCancelButton: UIButton!
+    @IBOutlet weak var destinationListOrCancelButton: UIButton!
     
     var mapView = SubwayMapView()
     var subway = Subway()
     
     var sourceIsChosen = false
     var destinationIsChosen = false
+    
+    var source: Subway.Station? {
+        didSet {
+            if (source == nil) {
+                deactivateSourceStation()
+                mapView.deactivateStation(at: oldValue!.position, on: oldValue!.label!)
+                if (destination == nil){
+                    swapButton.alpha = 0.5
+                }
+            } else {
+                activateSourceStation()
+                swapButton.alpha = 1.0
+            }
+        }
+    }
+    
+    var destination: Subway.Station? {
+        didSet {
+            if (destination == nil) {
+                deactivateDestinationStation()
+                mapView.deactivateStation(at: oldValue!.position, on: oldValue!.label!)
+                if (source == nil) {
+                    swapButton.alpha = 0.5
+                }
+            } else {
+                activateDestinationStation()
+                swapButton.alpha = 1.0
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +68,14 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
         updateMinZoomScaleForSize(size: view.bounds.size)
         
-        var tapLabelRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.usersTap(tapRecognizer:)))
+        var tapLabelRecognizer = UITapGestureRecognizer(target: self, action: #selector(usersTap(tapRecognizer:)))
         tapLabelRecognizer.numberOfTapsRequired = 1
         tapLabelRecognizer.cancelsTouchesInView = false
         scrollView.addGestureRecognizer(tapLabelRecognizer)
         
+        sourceListOrCancelButton.imageView?.contentMode = .scaleAspectFit
+        destinationListOrCancelButton.imageView?.contentMode = .scaleAspectFit
+
         swapButton.alpha = 0.5
         
     }
@@ -51,6 +85,42 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         setImageViewAtTheCenterOfScrollView()
     }
     
+    @IBAction func cancelSourceChoice(_ sender: UIButton) {
+        source = nil
+
+    }
+    @IBAction func cancelDestinationChoice(_ sender: UIButton) {
+        destination = nil
+    }
+    
+    private func deactivateSourceStation(){
+        sourceLinePoint.image = nil
+        sourceLabel.text = "Куди"
+        sourceListOrCancelButton.imageView?.image = UIImage(named: "list_icon")
+    }
+    
+    private func activateSourceStation(){
+        sourceLinePoint.image = UIImage.point(for: source!.line)
+        sourceLabel.text = source!.name
+        sourceListOrCancelButton.imageView?.image = UIImage(named: "cancel")
+    }
+    
+    private func deactivateDestinationStation(){
+        destinationLinePoint.image = nil
+        destinationLabel.text = "Звiдки"
+        destinationListOrCancelButton.imageView?.image = UIImage(named: "list_icon")
+    }
+    
+    private func activateDestinationStation(){
+        destinationLinePoint.image = UIImage.point(for: destination!.line)
+        destinationLabel.text = destination!.name
+        destinationListOrCancelButton.imageView?.image = UIImage(named: "cancel")
+    }
+    
+    @IBAction func touch(_ sender: UIButton) {
+    }
+    
+    
     func usersTap(tapRecognizer: UITapGestureRecognizer){
         guard (sourceIsChosen != true || destinationIsChosen != true) else {
             return
@@ -59,17 +129,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         if let currentStation = checkIfSomeStationIsChosen(for: tapLocation){
             var currentLinePoint = UIImageView()
             var currentStationLabel = UILabel()
-            if (!sourceIsChosen){
-                currentLinePoint = sourceLinePoint
-                currentStationLabel = sourceLabel
-                sourceIsChosen = true
+            if (source == nil){
+                source = currentStation
             } else {
-                currentLinePoint = destinationLinePoint
-                currentStationLabel = destinationLabel
-                destinationIsChosen = true
+                destination = currentStation
             }
-            currentLinePoint.image = UIImage.point(for: currentStation.line)
-            currentStationLabel.text = currentStation.name
         }
         
     }

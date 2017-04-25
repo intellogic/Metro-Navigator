@@ -36,6 +36,11 @@ class SubwayMapView: UIImageView {
         label.backgroundColor = UIColor.gray
     }
     
+    func deactivateStation(at center: CGPoint, on label: UILabel){
+        label.textColor = UIColor.black
+        label.backgroundColor = UIColor.clear
+    }
+    
     func setLabels( stations: inout [Subway.Station]){
         var number = 0
         for station in stations {
