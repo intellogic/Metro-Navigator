@@ -19,11 +19,12 @@
 		</array>
 		<key>neighbors</key>
 		<array>
-			<array>
-				<integer>0</integer>
-				<integer>0</integer>
-				<integer>0</integer>
-			</array>
+			<dict>
+				<key>station</key>
+				<integer>1</integer>
+				<key>interval</key>
+				<integer>130</integer>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -43,11 +44,12 @@
 		</array>
 		<key>neighbors</key>
 		<array>
-			<array>
-				<integer>0</integer>
-				<integer>0</integer>
-				<integer>0</integer>
-			</array>
+			<dict>
+				<key>station</key>
+				<integer>2</integer>
+				<key>interval</key>
+				<integer>160</integer>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -67,11 +69,12 @@
 		</array>
 		<key>neighbors</key>
 		<array>
-			<array>
-				<integer>0</integer>
-				<integer>0</integer>
-				<integer>0</integer>
-			</array>
+			<dict>
+				<key>station</key>
+				<integer>3</integer>
+				<key>interval</key>
+				<integer>80</integer>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -91,11 +94,12 @@
 		</array>
 		<key>neighbors</key>
 		<array>
-			<array>
-				<integer>0</integer>
-				<integer>0</integer>
-				<integer>0</integer>
-			</array>
+			<dict>
+				<key>station</key>
+				<integer>4</integer>
+				<key>interval</key>
+				<integer>100</integer>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -115,11 +119,12 @@
 		</array>
 		<key>neighbors</key>
 		<array>
-			<array>
-				<integer>0</integer>
-				<integer>0</integer>
-				<integer>0</integer>
-			</array>
+			<dict>
+				<key>station</key>
+				<integer>5</integer>
+				<key>interval</key>
+				<integer>170</integer>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -139,11 +144,12 @@
 		</array>
 		<key>neighbors</key>
 		<array>
-			<array>
-				<integer>0</integer>
-				<integer>0</integer>
-				<integer>0</integer>
-			</array>
+			<dict>
+				<key>station</key>
+				<integer>6</integer>
+				<key>interval</key>
+				<integer>100</integer>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -163,11 +169,12 @@
 		</array>
 		<key>neighbors</key>
 		<array>
-			<array>
-				<integer>0</integer>
-				<integer>0</integer>
-				<integer>0</integer>
-			</array>
+			<dict>
+				<key>station</key>
+				<integer>7</integer>
+				<key>interval</key>
+				<integer>120</integer>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -187,11 +194,12 @@
 		</array>
 		<key>neighbors</key>
 		<array>
-			<array>
-				<integer>0</integer>
-				<integer>0</integer>
-				<integer>0</integer>
-			</array>
+			<dict>
+				<key>station</key>
+				<integer>8</integer>
+				<key>interval</key>
+				<integer>100</integer>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -211,11 +219,12 @@
 		</array>
 		<key>neighbors</key>
 		<array>
-			<array>
-				<integer>0</integer>
-				<integer>0</integer>
-				<integer>0</integer>
-			</array>
+			<dict>
+				<key>station</key>
+				<integer>9</integer>
+				<key>interval</key>
+				<integer>110</integer>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -235,11 +244,12 @@
 		</array>
 		<key>neighbors</key>
 		<array>
-			<array>
-				<integer>0</integer>
-				<integer>0</integer>
-				<integer>0</integer>
-			</array>
+			<dict>
+				<key>station</key>
+				<integer>10</integer>
+				<key>interval</key>
+				<integer>90</integer>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -259,11 +269,12 @@
 		</array>
 		<key>neighbors</key>
 		<array>
-			<array>
-				<integer>0</integer>
-				<integer>0</integer>
-				<integer>0</integer>
-			</array>
+			<dict>
+				<key>station</key>
+				<integer>11</integer>
+				<key>interval</key>
+				<integer>120</integer>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -283,11 +294,12 @@
 		</array>
 		<key>neighbors</key>
 		<array>
-			<array>
-				<integer>0</integer>
-				<integer>0</integer>
-				<integer>0</integer>
-			</array>
+			<dict>
+				<key>station</key>
+				<integer>12</integer>
+				<key>interval</key>
+				<integer>100</integer>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -307,11 +319,12 @@
 		</array>
 		<key>neighbors</key>
 		<array>
-			<array>
-				<integer>0</integer>
-				<integer>0</integer>
-				<integer>0</integer>
-			</array>
+			<dict>
+				<key>station</key>
+				<integer>13</integer>
+				<key>interval</key>
+				<integer>140</integer>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -331,11 +344,12 @@
 		</array>
 		<key>neighbors</key>
 		<array>
-			<array>
-				<integer>0</integer>
-				<integer>0</integer>
-				<integer>0</integer>
-			</array>
+			<dict>
+				<key>station</key>
+				<integer>14</integer>
+				<key>interval</key>
+				<integer>140</integer>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -355,11 +369,12 @@
 		</array>
 		<key>neighbors</key>
 		<array>
-			<array>
-				<integer>0</integer>
-				<integer>0</integer>
-				<integer>0</integer>
-			</array>
+			<dict>
+				<key>station</key>
+				<integer>15</integer>
+				<key>interval</key>
+				<integer>110</integer>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -379,11 +394,12 @@
 		</array>
 		<key>neighbors</key>
 		<array>
-			<array>
-				<integer>0</integer>
-				<integer>0</integer>
-				<integer>0</integer>
-			</array>
+			<dict>
+				<key>station</key>
+				<integer>16</integer>
+				<key>interval</key>
+				<integer>120</integer>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -403,11 +419,12 @@
 		</array>
 		<key>neighbors</key>
 		<array>
-			<array>
-				<integer>0</integer>
-				<integer>0</integer>
-				<integer>0</integer>
-			</array>
+			<dict>
+				<key>station</key>
+				<integer>17</integer>
+				<key>interval</key>
+				<integer>120</integer>
+			</dict>
 		</array>
 	</dict>
 	<dict>

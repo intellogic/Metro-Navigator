@@ -13,6 +13,8 @@ class SubwayMapView: UIImageView {
     let stationPointRadius: CGFloat = 30.05
     var labels: [UILabel] = []
     
+    
+    
     convenience init(){
         self.init(frame: CGRect.zero)
     }
@@ -31,14 +33,14 @@ class SubwayMapView: UIImageView {
         self.image = image
     }
 
-    func activateStation(at center: CGPoint, on label: UILabel){
-        label.textColor = UIColor.white
-        label.backgroundColor = UIColor.gray
+    func activate(_ station: Subway.Station){
+        station.label?.textColor = UIColor.white
+        station.label?.backgroundColor = UIColor.gray
     }
     
-    func deactivateStation(at center: CGPoint, on label: UILabel){
-        label.textColor = UIColor.black
-        label.backgroundColor = UIColor.clear
+    func deactivate(_ station: Subway.Station){
+        station.label?.textColor = UIColor.black
+        station.label?.backgroundColor = UIColor.clear
     }
     
     func setLabels( stations: inout [Subway.Station]){

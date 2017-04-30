@@ -27,31 +27,43 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     var source: Subway.Station? {
         didSet {
-            if (source == nil) {
+            if (source == nil && oldValue != nil) {
                 deactivateSourceStation()
-                mapView.deactivateStation(at: oldValue!.position, on: oldValue!.label!)
-                if (destination == nil){
-                    swapButton.alpha = 0.5
-                }
-            } else {
+                mapView.deactivate(oldValue!)
+            }
+            if (source != nil){
                 activateSourceStation()
                 swapButton.alpha = 1.0
+                if destination != nil {
+                    findPath()
+                }
+            } else {
+                if (destination == nil) {
+                    swapButton.alpha = 0.5
+                }
             }
         }
     }
     
     var destination: Subway.Station? {
         didSet {
-            if (destination == nil) {
+            
+            if (destination == nil && oldValue != nil) {
                 deactivateDestinationStation()
-                mapView.deactivateStation(at: oldValue!.position, on: oldValue!.label!)
+                mapView.deactivate(oldValue!)
+            }
+            if (destination != nil) {
+                activateDestinationStation()
+                swapButton.alpha = 1.0
+                if (source != nil) {
+                    findPath()
+                }
+            } else {
                 if (source == nil) {
                     swapButton.alpha = 0.5
                 }
-            } else {
-                activateDestinationStation()
-                swapButton.alpha = 1.0
             }
+        
         }
     }
     
@@ -80,22 +92,58 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
+    private func findPath(){
+        if let source = source, let destination = destination, source.ID != destination.ID {
+            subway.calculatePath(from: source.ID, to: destination.ID)
+        }
+    }
+    
+
+    @IBAction func swapStations(_ sender: UIButton) {
+        if (source != nil || destination != nil){
+            let t = source
+            source = destination
+            destination = t
+            if (destination == nil && source != nil){
+                activateSourceStation()
+            }
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setImageViewAtTheCenterOfScrollView()
     }
     
     @IBAction func cancelSourceChoice(_ sender: UIButton) {
-        source = nil
+        if (source != nil){
+            source = nil
+        } else {
+            prepareForSelectingView(forSource: true)
+        }
 
     }
+    
     @IBAction func cancelDestinationChoice(_ sender: UIButton) {
-        destination = nil
+        if (destination != nil){
+            destination = nil
+        } else {
+            prepareForSelectingView(forSource: false)
+        }
+    }
+    
+    private func prepareForSelectingView(forSource: Bool){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let selectStationViewController = storyboard.instantiateViewController(withIdentifier: "SelectStationView") as! SelectStationViewController
+        selectStationViewController.stations = subway.stationsByLine()
+        selectStationViewController.forSource = forSource
+        present(selectStationViewController, animated: true, completion: nil)
+
     }
     
     private func deactivateSourceStation(){
         sourceLinePoint.image = nil
-        sourceLabel.text = "Куди"
+        sourceLabel.text = "Звiдки"
         sourceListOrCancelButton.imageView?.image = UIImage(named: "list_icon")
     }
     
@@ -103,11 +151,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         sourceLinePoint.image = UIImage.point(for: source!.line)
         sourceLabel.text = source!.name
         sourceListOrCancelButton.imageView?.image = UIImage(named: "cancel")
+        mapView.activate(source!)
     }
     
     private func deactivateDestinationStation(){
         destinationLinePoint.image = nil
-        destinationLabel.text = "Звiдки"
+        destinationLabel.text = "Куди"
         destinationListOrCancelButton.imageView?.image = UIImage(named: "list_icon")
     }
     
@@ -115,6 +164,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         destinationLinePoint.image = UIImage.point(for: destination!.line)
         destinationLabel.text = destination!.name
         destinationListOrCancelButton.imageView?.image = UIImage(named: "cancel")
+        mapView.activate(destination!)
     }
     
     @IBAction func touch(_ sender: UIButton) {
@@ -131,7 +181,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             var currentStationLabel = UILabel()
             if (source == nil){
                 source = currentStation
-            } else {
+            } else if (destination == nil){
                 destination = currentStation
             }
         }
@@ -144,7 +194,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             var index = 0
             for view in mapView.subviews {
                 if view.frame.contains(tapLocation), let view = view as? UILabel {
-                    mapView.activateStation(at: subway.stations[index].position, on: view)
                     return subway.stations[index]
                 }
                 index += 1
@@ -154,7 +203,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             for station in subway.stations {
                 let currentDistance = tapLocation.distance(to: station.position)
                 if currentDistance < mapView.stationPointRadius * 1.5 {
-                    mapView.activateStation(at: station.position, on: station.label!)
                     return station
                 }
                 if currentDistance < maxDistance {
@@ -163,11 +211,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 }
             }
             if maxDistance < mapView.stationPointRadius * 3 {
-                mapView.activateStation(at: closestStation.position, on: closestStation.label!)
                 return closestStation
             }
         }
-        
         return nil
     }
     
