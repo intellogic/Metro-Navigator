@@ -57,7 +57,6 @@ class SubwayMapView: UIImageView {
             stations[number].label = label
             var x = origin.x
             var y = origin.y
-
             switch number {
                 case 0...6:
                     x -= label.frame.size.width + stationPointRadius

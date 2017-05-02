@@ -18,15 +18,23 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var sourceListOrCancelButton: UIButton!
     @IBOutlet weak var destinationListOrCancelButton: UIButton!
+    @IBOutlet weak var controlView: UIView!
     
     var mapView = SubwayMapView()
     var subway = Subway()
     
+    var newView: UIView?
+    
     var sourceIsChosen = false
     var destinationIsChosen = false
     
+    var path: [Int]?
+    
     var source: Subway.Station? {
         didSet {
+            
+            deactivateStationsBetweenSourceAndDestination()
+            
             if (source == nil && oldValue != nil) {
                 deactivateSourceStation()
                 mapView.deactivate(oldValue!)
@@ -47,6 +55,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     var destination: Subway.Station? {
         didSet {
+            
+            deactivateStationsBetweenSourceAndDestination()
             
             if (destination == nil && oldValue != nil) {
                 deactivateDestinationStation()
@@ -84,6 +94,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         tapLabelRecognizer.numberOfTapsRequired = 1
         tapLabelRecognizer.cancelsTouchesInView = false
         scrollView.addGestureRecognizer(tapLabelRecognizer)
+    
         
         sourceListOrCancelButton.imageView?.contentMode = .scaleAspectFit
         destinationListOrCancelButton.imageView?.contentMode = .scaleAspectFit
@@ -92,9 +103,55 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
+    
+    var beginPoint = CGPoint.zero
+    
+    func swipe(swipeRecognizer: UIPanGestureRecognizer){
+        if let newView = newView {
+            switch swipeRecognizer.state {
+                case .began:
+                    beginPoint = swipeRecognizer.location(in: view)
+                    print(beginPoint)
+                case .changed:
+                    let newPanPoint = swipeRecognizer.location(in: view)
+                    print(newPanPoint)
+                    controlView.frame.origin.y -= beginPoint.y - newPanPoint.y
+                    beginPoint = newPanPoint
+                case .ended:
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.controlView.frame.origin = CGPoint.zero
+                    })
+                default: break
+            }
+        }
+    }
+    
+    private func deactivateStationsBetweenSourceAndDestination(){
+        if let path = path {
+            for index in path {
+                if index != source?.ID && index != destination?.ID {
+                    mapView.deactivate(subway.stations[index])
+                }
+
+                
+            }
+        }
+    }
+    
     private func findPath(){
         if let source = source, let destination = destination, source.ID != destination.ID {
-            subway.calculatePath(from: source.ID, to: destination.ID)
+            path = subway.calculatePath(from: source.ID, to: destination.ID)
+            for index in path! {
+                mapView.activate(subway.stations[index])
+            }
+
+            controlView.removeFromSuperview()
+            controlView.frame = CGRect(origin: controlView.frame.origin, size: CGSize(width: view.frame.width, height: view.frame.height * 0.08))
+            view.addSubview(controlView)
+            
+            var swipeUpGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(swipe(swipeRecognizer:)))
+            swipeUpGestureRecognizer.minimumNumberOfTouches = 1
+            controlView!.addGestureRecognizer(swipeUpGestureRecognizer)
         }
     }
     
@@ -113,6 +170,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setImageViewAtTheCenterOfScrollView()
+        controlView.frame = CGRect(origin: controlView.frame.origin, size: CGSize(width: view.frame.width, height: view.frame.height * 0.08))
+
     }
     
     @IBAction func cancelSourceChoice(_ sender: UIButton) {

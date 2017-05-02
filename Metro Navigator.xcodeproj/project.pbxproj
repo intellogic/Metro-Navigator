@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BA1D7C091EB65FBB00887519 /* BinaryHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D7C081EB65FBB00887519 /* BinaryHeap.swift */; };
 		BA2C65B21EABC5B700D735EF /* Kiev.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA2C65B11EABC5B700D735EF /* Kiev.plist */; };
+		BA2E77251EB79A990030D02C /* RouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2E77241EB79A990030D02C /* RouteViewController.swift */; };
 		BA4A93051EA4D7BD00E10055 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4A93041EA4D7BD00E10055 /* AppDelegate.swift */; };
 		BA4A93071EA4D7BD00E10055 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4A93061EA4D7BD00E10055 /* ViewController.swift */; };
 		BA4A930A1EA4D7BD00E10055 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4A93081EA4D7BD00E10055 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		BA1D7C081EB65FBB00887519 /* BinaryHeap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryHeap.swift; sourceTree = "<group>"; };
 		BA2C65B11EABC5B700D735EF /* Kiev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Kiev.plist; sourceTree = "<group>"; };
+		BA2E77241EB79A990030D02C /* RouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteViewController.swift; sourceTree = "<group>"; };
 		BA4A93011EA4D7BD00E10055 /* Metro Navigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Metro Navigator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4A93041EA4D7BD00E10055 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA4A93061EA4D7BD00E10055 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				BA2C65B11EABC5B700D735EF /* Kiev.plist */,
 				BA4A93041EA4D7BD00E10055 /* AppDelegate.swift */,
 				BA4A93061EA4D7BD00E10055 /* ViewController.swift */,
+				BA2E77241EB79A990030D02C /* RouteViewController.swift */,
 				BAFCD2D31EB1147700D58071 /* SelectStationViewController.swift */,
 				BAD25B0D1EAA84B80011E13E /* SubwayMapView.swift */,
 				BAD6645A1EAE68150018FF66 /* Subway.swift */,
@@ -159,6 +162,7 @@
 				BAD6645B1EAE68150018FF66 /* Subway.swift in Sources */,
 				BAFCD2D41EB1147700D58071 /* SelectStationViewController.swift in Sources */,
 				BA4A93051EA4D7BD00E10055 /* AppDelegate.swift in Sources */,
+				BA2E77251EB79A990030D02C /* RouteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

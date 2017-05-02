@@ -56,7 +56,7 @@ class BinaryHeap <Key: Comparable, Value: Comparable> {
         }
     }
     
-    private func heapify(){
+    func heapify(){
         for currentNode in (0...((size - 1)/2)).reversed() {
             minHeapify(for: currentNode)
         }
@@ -71,7 +71,11 @@ class BinaryHeap <Key: Comparable, Value: Comparable> {
     }
     
     public func getMin() -> Node<Key, Value> {
-        return nodes.remove(at: 0)
+        let node = nodes[0]
+        nodes[0] = nodes.last!
+        nodes.remove(at: nodes.count - 1)
+        minHeapify(for: 0)
+        return node
     }
     
     public func updateValue(for key : Key, with newValue: Value){

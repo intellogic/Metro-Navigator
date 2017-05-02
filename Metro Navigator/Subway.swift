@@ -33,7 +33,7 @@ class Subway {
         }
         currentID = 0
         for station in stationsArray {
-            if currentID < 17, let station = station as? [String: Any]{
+            if let station = station as? [String: Any]{
                 let neighbors = station["neighbors"] as! [Any]
                 for neighbor in neighbors {
                     let neighbor = neighbor as! [String: NSNumber]
@@ -45,13 +45,6 @@ class Subway {
             }
             currentID += 1
         }
-        
-        for station in adjacentStations {
-            for (key, value) in station {
-                print(key)
-            }
-        }
-    
     }
     
     func stationsByLine() -> [[Subway.Station]] {
@@ -80,14 +73,10 @@ class Subway {
         return stationsListByLine
     }
     
-    func calculatePath(from sourceID: Int, to destinationID: Int) {
-    
-        print("START CALCULATING")
-        print(sourceID)
-        print(destinationID)
+    func calculatePath(from sourceID: Int, to destinationID: Int) -> [Int] {
         var usedStations = Array(repeating: false, count: stations.count)
         var distances = Array(repeating: Int.max, count: stations.count)
-        var parent = Array(repeating: 0, count: stations.count)
+        var parent = Array(repeating: -1, count: stations.count)
         distances[sourceID] = 0
         var stationIndex = 0
         var stationsNodes: [Node<Int, Int>] = []
@@ -97,15 +86,13 @@ class Subway {
             stationsNodes.append(newNode)
         }
         var stationsHeap = BinaryHeap(with: stationsNodes)
-        
-        
         while (stationsHeap.size > 0) {
             let currentStation = stationsHeap.getMin()
             let currentID = currentStation.key
             let currentDistance = currentStation.value
             usedStations[currentID] = true
             for (stationID, distance) in adjacentStations[currentID] {
-                if !usedStations[stationID], distances[stationID] > currentDistance + distance {
+                if !usedStations[stationID]  && (distances[stationID] > currentDistance + distance) {
                     let newDistance = currentDistance + distance
                     distances[stationID] = newDistance
                     stationsHeap.updateValue(for: stationID, with: newDistance)
@@ -115,12 +102,15 @@ class Subway {
         }
         
         var currentID = destinationID
-        while currentID != 0 {
-            print("ID = \(currentID)")
+        var path = [Int]()
+        while currentID != -1 {
+            path.append(currentID)
             currentID = parent[currentID]
         }
         
+        return path.reversed()
     }
+    
     
     struct Station {
         let name: String
