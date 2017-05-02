@@ -35,12 +35,20 @@ class SubwayMapView: UIImageView {
 
     func activate(_ station: Subway.Station){
         station.label?.textColor = UIColor.white
-        station.label?.backgroundColor = UIColor.gray
+        station.label?.backgroundColor = UIColor.darkGray
     }
     
     func deactivate(_ station: Subway.Station){
         station.label?.textColor = UIColor.black
         station.label?.backgroundColor = UIColor.clear
+    }
+    
+    func hide (station: Subway.Station){
+        station.label?.alpha = 0.1
+    }
+    
+    func show(station: Subway.Station){
+        station.label?.alpha = 1.0
     }
     
     func setLabels( stations: inout [Subway.Station]){

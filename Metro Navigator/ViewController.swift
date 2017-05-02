@@ -19,7 +19,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var sourceListOrCancelButton: UIButton!
     @IBOutlet weak var destinationListOrCancelButton: UIButton!
     @IBOutlet weak var controlView: UIView!
-    
+    @IBOutlet weak var pathControlView: UIStackView!
+    @IBOutlet weak var pathInfoView: UIView!
+    @IBOutlet weak var pathTimeLabel: UILabel!
+    @IBOutlet weak var arrivalTimeLabel: UILabel!
+    @IBOutlet weak var swipeArrowImageView: UIImageView!
     var mapView = SubwayMapView()
     var subway = Subway()
     
@@ -30,10 +34,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     var path: [Int]?
     
+    var pathControlViewFrameOrigin: CGPoint?
+    
+    var detailedPathInfoIsVisible = false
+    
     var source: Subway.Station? {
         didSet {
             
-            deactivateStationsBetweenSourceAndDestination()
+            pathInfoView.isHidden = true
+            pathControlView.gestureRecognizers = []
+            showStationsOutsidePath()
             
             if (source == nil && oldValue != nil) {
                 deactivateSourceStation()
@@ -56,7 +66,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     var destination: Subway.Station? {
         didSet {
             
-            deactivateStationsBetweenSourceAndDestination()
+            pathInfoView.isHidden = true
+            pathControlView.gestureRecognizers = []
+            showStationsOutsidePath()
             
             if (destination == nil && oldValue != nil) {
                 deactivateDestinationStation()
@@ -99,30 +111,44 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         sourceListOrCancelButton.imageView?.contentMode = .scaleAspectFit
         destinationListOrCancelButton.imageView?.contentMode = .scaleAspectFit
 
+        pathInfoView.isHidden = true
+        
         swapButton.alpha = 0.5
         
+        pathControlView.gestureRecognizers = []
     }
     
     
     var beginPoint = CGPoint.zero
     
     func swipe(swipeRecognizer: UIPanGestureRecognizer){
-        if let newView = newView {
-            switch swipeRecognizer.state {
-                case .began:
-                    beginPoint = swipeRecognizer.location(in: view)
-                    print(beginPoint)
-                case .changed:
-                    let newPanPoint = swipeRecognizer.location(in: view)
-                    print(newPanPoint)
-                    controlView.frame.origin.y -= beginPoint.y - newPanPoint.y
-                    beginPoint = newPanPoint
-                case .ended:
+        let location = swipeRecognizer.location(in: view)
+        switch swipeRecognizer.state {
+            case .began:
+                beginPoint = swipeRecognizer.location(in: view)
+                print(beginPoint)
+            case .changed:
+                let newPanPoint = swipeRecognizer.location(in: view)
+                print(newPanPoint)
+                pathControlView.frame.origin.y -= beginPoint.y - newPanPoint.y
+                beginPoint = newPanPoint
+            case .ended:
+                if ((location.y > view.frame.height * 0.8 && !detailedPathInfoIsVisible) || (location.y > view.frame.height * 0.2 && detailedPathInfoIsVisible)) {
                     UIView.animate(withDuration: 0.5, animations: {
-                        self.controlView.frame.origin = CGPoint.zero
+                        self.pathControlView.frame.origin = self.pathControlViewFrameOrigin!
+                    }, completion: { (completed) in
+                        self.swipeArrowImageView.image = UIImage(named: "SwipeUpArrow")
+                        self.detailedPathInfoIsVisible = false
                     })
-                default: break
-            }
+                } else {
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.pathControlView.frame.origin = CGPoint(x: 0, y: UIApplication.shared.statusBarFrame.maxY)
+                    }, completion: { (completed) in
+                        self.swipeArrowImageView.image = UIImage(named: "SwipeDownArrow")
+                        self.detailedPathInfoIsVisible = true
+                    })
+                }
+            default: break
         }
     }
     
@@ -140,19 +166,34 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     private func findPath(){
         if let source = source, let destination = destination, source.ID != destination.ID {
-            path = subway.calculatePath(from: source.ID, to: destination.ID)
-            for index in path! {
-                mapView.activate(subway.stations[index])
+            let (newPath, time, _, info) = subway.calculatePath(from: source.ID, to: destination.ID)
+            path = newPath
+            if let info = info {
+                print(info)
             }
-
-            controlView.removeFromSuperview()
-            controlView.frame = CGRect(origin: controlView.frame.origin, size: CGSize(width: view.frame.width, height: view.frame.height * 0.08))
-            view.addSubview(controlView)
-            
+            hideStationsOutsidePath()
+            setPathAndArrivalTime(for: time)
+            pathInfoView.isHidden = false
+            pathControlView.isUserInteractionEnabled = true
+            pathControlViewFrameOrigin = pathControlView.frame.origin
+            self.swipeArrowImageView.image = UIImage(named: "SwipeUpArrow")
             var swipeUpGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(swipe(swipeRecognizer:)))
             swipeUpGestureRecognizer.minimumNumberOfTouches = 1
-            controlView!.addGestureRecognizer(swipeUpGestureRecognizer)
+            pathControlView.addGestureRecognizer(swipeUpGestureRecognizer)
         }
+    }
+    
+    private func setPathAndArrivalTime(for time: Int){
+        let timeInMinutes = time / 60
+        pathTimeLabel.text = String(timeInMinutes) + " хв"
+        var date = Date()
+        print(date.description)
+        date.addTimeInterval(TimeInterval(time))
+        print(date.description)
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .short
+        dateFormatter.locale = Locale.current
+        arrivalTimeLabel.text = "Прибуття о " + dateFormatter.string(from: date)
     }
     
 
@@ -170,8 +211,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setImageViewAtTheCenterOfScrollView()
-        controlView.frame = CGRect(origin: controlView.frame.origin, size: CGSize(width: view.frame.width, height: view.frame.height * 0.08))
-
+        //controlView.frame = CGRect(origin: controlView.frame.origin, size: CGSize(width: view.frame.width, height: view.frame.height * 0.08))
+        print("DID LAYOUT")
+        pathControlViewFrameOrigin = pathControlView.frame.origin
     }
     
     @IBAction func cancelSourceChoice(_ sender: UIButton) {
@@ -226,7 +268,24 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         mapView.activate(destination!)
     }
     
-    @IBAction func touch(_ sender: UIButton) {
+    private func hideStationsOutsidePath(){
+        if let path = path {
+            for station in subway.stations {
+                if !path.contains(station.ID){
+                    mapView.hide(station: station)
+                }
+            }
+        }
+    }
+    
+    private func showStationsOutsidePath(){
+        if let path = path {
+            for station in subway.stations {
+                if !path.contains(station.ID){
+                    mapView.show(station: station)
+                }
+            }
+        }
     }
     
     

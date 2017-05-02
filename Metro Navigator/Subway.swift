@@ -73,7 +73,7 @@ class Subway {
         return stationsListByLine
     }
     
-    func calculatePath(from sourceID: Int, to destinationID: Int) -> [Int] {
+    func calculatePath(from sourceID: Int, to destinationID: Int) -> ([Int], Int, Int, (Int, Int, String)?) {
         var usedStations = Array(repeating: false, count: stations.count)
         var distances = Array(repeating: Int.max, count: stations.count)
         var parent = Array(repeating: -1, count: stations.count)
@@ -103,12 +103,23 @@ class Subway {
         
         var currentID = destinationID
         var path = [Int]()
+        var time = 0
+        var numberOfTransfers = 0
+        var lineTransferInformation: (Int, Int, String)? = nil
         while currentID != -1 {
             path.append(currentID)
+            if (parent[currentID] != -1) {
+                time += adjacentStations[currentID][parent[currentID]]!
+                if stations[parent[currentID]].line != stations[currentID].line
+                {
+                    numberOfTransfers += 1
+                    lineTransferInformation = (parent[currentID], currentID, stations[parent[currentID]].line + "-" + stations[currentID].line)
+                }
+            }
             currentID = parent[currentID]
         }
         
-        return path.reversed()
+        return (path.reversed(), time, numberOfTransfers, lineTransferInformation)
     }
     
     
