@@ -24,6 +24,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var pathTimeLabel: UILabel!
     @IBOutlet weak var arrivalTimeLabel: UILabel!
     @IBOutlet weak var swipeArrowImageView: UIImageView!
+    @IBOutlet weak var pathTableView: UITableView!
     var mapView = SubwayMapView()
     var subway = Subway()
     
@@ -34,12 +35,25 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     var path: [Int]?
     
-    var pathControlViewFrameOrigin: CGPoint?
+    var pathControlViewFrameOrigin: CGPoint {
+        get {
+            return CGPoint(x: 0, y: view.frame.height - pathControlView.frame.height)
+        }
+    }
     
-    var detailedPathInfoIsVisible = false
+    var pathControlViewIsInTranformationProcess = false
+    var pathControlViewIsTransformed = false {
+        didSet {
+            if (!pathControlViewIsTransformed){
+                movePathControlViewToOrigin()
+            }
+        }
+    }
     
     var source: Subway.Station? {
         didSet {
+            
+            pathControlViewIsTransformed = false
             
             pathInfoView.isHidden = true
             pathControlView.gestureRecognizers = []
@@ -65,6 +79,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     var destination: Subway.Station? {
         didSet {
+            
+            pathControlViewIsTransformed = false
             
             pathInfoView.isHidden = true
             pathControlView.gestureRecognizers = []
@@ -107,9 +123,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         tapLabelRecognizer.cancelsTouchesInView = false
         scrollView.addGestureRecognizer(tapLabelRecognizer)
     
+        pathTableView.delegate = self
+        pathTableView.dataSource = self
         
         sourceListOrCancelButton.imageView?.contentMode = .scaleAspectFit
         destinationListOrCancelButton.imageView?.contentMode = .scaleAspectFit
+        
+        pathControlView.frame.origin = pathControlViewFrameOrigin
 
         pathInfoView.isHidden = true
         
@@ -127,25 +147,31 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             case .began:
                 beginPoint = swipeRecognizer.location(in: view)
                 print(beginPoint)
+                pathControlViewIsInTranformationProcess = true
             case .changed:
                 let newPanPoint = swipeRecognizer.location(in: view)
                 print(newPanPoint)
                 pathControlView.frame.origin.y -= beginPoint.y - newPanPoint.y
                 beginPoint = newPanPoint
+                pathControlViewIsInTranformationProcess = true
+                updatePathTableViewFrame()
             case .ended:
-                if ((location.y > view.frame.height * 0.8 && !detailedPathInfoIsVisible) || (location.y > view.frame.height * 0.2 && detailedPathInfoIsVisible)) {
+                if ((location.y > view.frame.height * 0.8 && !pathControlViewIsTransformed) || (location.y > view.frame.height * 0.2 && pathControlViewIsTransformed)) {
                     UIView.animate(withDuration: 0.5, animations: {
-                        self.pathControlView.frame.origin = self.pathControlViewFrameOrigin!
+                        self.pathControlView.frame.origin = self.pathControlViewFrameOrigin
+                        self.updatePathTableViewFrame()
                     }, completion: { (completed) in
                         self.swipeArrowImageView.image = UIImage(named: "SwipeUpArrow")
-                        self.detailedPathInfoIsVisible = false
+                        self.pathControlViewIsInTranformationProcess = false
+                        self.pathControlViewIsTransformed = false
                     })
                 } else {
                     UIView.animate(withDuration: 0.5, animations: {
                         self.pathControlView.frame.origin = CGPoint(x: 0, y: UIApplication.shared.statusBarFrame.maxY)
+                        self.updatePathTableViewFrame()
                     }, completion: { (completed) in
                         self.swipeArrowImageView.image = UIImage(named: "SwipeDownArrow")
-                        self.detailedPathInfoIsVisible = true
+                        self.pathControlViewIsTransformed = true
                     })
                 }
             default: break
@@ -164,6 +190,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    private func movePathControlViewToOrigin(){
+        pathControlView.frame.origin = pathControlViewFrameOrigin
+        print(pathControlViewFrameOrigin)
+    }
+    
+    func updatePathTableViewFrame(){
+        pathTableView.frame = CGRect(origin: CGPoint(x: 0, y: pathControlView.frame.maxY),  size: CGSize(width: view.frame.width, height: view.frame.height - pathControlView.frame.height))
+
+    }
+    
     private func findPath(){
         if let source = source, let destination = destination, source.ID != destination.ID {
             let (newPath, time, _, info) = subway.calculatePath(from: source.ID, to: destination.ID)
@@ -171,11 +207,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             if let info = info {
                 print(info)
             }
+            pathControlViewIsTransformed = false
             hideStationsOutsidePath()
             setPathAndArrivalTime(for: time)
             pathInfoView.isHidden = false
+            pathTableView.isHidden = false
+            pathTableView.reloadData()
             pathControlView.isUserInteractionEnabled = true
-            pathControlViewFrameOrigin = pathControlView.frame.origin
             self.swipeArrowImageView.image = UIImage(named: "SwipeUpArrow")
             var swipeUpGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(swipe(swipeRecognizer:)))
             swipeUpGestureRecognizer.minimumNumberOfTouches = 1
@@ -213,7 +251,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         setImageViewAtTheCenterOfScrollView()
         //controlView.frame = CGRect(origin: controlView.frame.origin, size: CGSize(width: view.frame.width, height: view.frame.height * 0.08))
         print("DID LAYOUT")
-        pathControlViewFrameOrigin = pathControlView.frame.origin
+        if (!pathControlViewIsInTranformationProcess || !pathControlViewIsTransformed) {
+            pathControlView.frame.origin = pathControlViewFrameOrigin
+        }
+        updatePathTableViewFrame()
     }
     
     @IBAction func cancelSourceChoice(_ sender: UIButton) {
@@ -370,6 +411,36 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     
 }
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.path?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let pathTableCell = self.pathTableView.dequeueReusableCell(withIdentifier: "pathTableViewCell", for: indexPath) as! PathTableViewCell
+        pathTableCell.station = self.subway.stations[self.path![indexPath.row]]
+        return pathTableCell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+}
+
+class PathTableViewCell: UITableViewCell {
+    @IBOutlet weak var stationNameLabel: UILabel!
+    var station: Subway.Station? {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    func updateUI(){
+        stationNameLabel.text = station?.name
+    }
+}
+
 
 extension CGPoint {
     func distance(to point: CGPoint) -> CGFloat {
