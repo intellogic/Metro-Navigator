@@ -196,7 +196,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func updatePathTableViewFrame(){
-        pathTableView.frame = CGRect(origin: CGPoint(x: 0, y: pathControlView.frame.maxY),  size: CGSize(width: view.frame.width, height: view.frame.height - pathControlView.frame.height))
+        pathTableView.frame = CGRect(origin: CGPoint(x: 0, y: pathControlView.frame.maxY),  size: CGSize(width: view.frame.width, height: view.frame.height - pathControlView.frame.height - UIApplication.shared.statusBarFrame.height))
 
     }
     
