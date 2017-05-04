@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "To"; ObjectID = "2s8-aN-X3R"; */
+"2s8-aN-X3R.text" = " Звiдки";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "BXg-7k-d0d"; */
+"BXg-7k-d0d.normalTitle" = "Відміна";
+
+/* Class = "UILabel"; text = "N mins"; ObjectID = "EZR-xw-w9T"; */
+"EZR-xw-w9T.text" = "N mins";
+
+/* Class = "UILabel"; text = "Arrival at"; ObjectID = "MWw-Mh-Qde"; */
+"MWw-Mh-Qde.text" = "Arrival at";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "agD-uZ-fVc"; */
+"agD-uZ-fVc.text" = "Label";
+
+/* Class = "UILabel"; text = "From"; ObjectID = "hPR-tZ-Odh"; */
+"hPR-tZ-Odh.text" = " Куди";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kUu-BJ-fGX"; */
+"kUu-BJ-fGX.text" = "Label";
+
+/* Class = "UISearchBar"; placeholder = "Choose station"; ObjectID = "oB3-AJ-WLy"; */
+"oB3-AJ-WLy.placeholder" = "Виберіть станцію";
+
+/* Class = "UINavigationItem"; title = "Choose station"; ObjectID = "qrj-Uc-Vr3"; */
+"qrj-Uc-Vr3.title" = "Виберіть станцію";

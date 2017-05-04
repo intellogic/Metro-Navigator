@@ -220,7 +220,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     private func setPathAndArrivalTime(for time: Int){
         let timeInMinutes = time / 60
-        pathTimeLabel.text = String(timeInMinutes) + " хв"
+        pathTimeLabel.text = String(timeInMinutes) + " " + NSLocalizedString("minutes", comment: "minutes")
         var date = Date()
         print(date.description)
         date.addTimeInterval(TimeInterval(time))
@@ -228,7 +228,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .short
         dateFormatter.locale = Locale.current
-        arrivalTimeLabel.text = "Прибуття о " + dateFormatter.string(from: date)
+        arrivalTimeLabel.text = NSLocalizedString("Arrival at", comment: "Arrival at") + " " + dateFormatter.string(from: date)
     }
     
 
@@ -282,7 +282,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     private func deactivateSourceStation(){
         sourceLinePoint.image = nil
-        sourceLabel.text = "Звiдки"
+        sourceLabel.text = NSLocalizedString("fromLabelPlaceholder", comment: "fromLabelPlaceholder")
         sourceListOrCancelButton.imageView?.image = UIImage(named: "list_icon")
     }
     
@@ -295,7 +295,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     private func deactivateDestinationStation(){
         destinationLinePoint.image = nil
-        destinationLabel.text = "Куди"
+        destinationLabel.text = NSLocalizedString("toLabelPaceholder", comment: "toLabelPaceholder")
         destinationListOrCancelButton.imageView?.image = UIImage(named: "list_icon")
     }
     
@@ -336,7 +336,17 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             return
         }
         let tapLocation = tapRecognizer.location(in: self.mapView)
-        if let currentStation = checkIfSomeStationIsChosen(for: tapLocation){
+        if let currentStation = checkIfSomeStationIsChosen(for: tapLocation) {
+            if let source = source{
+                guard (currentStation.ID != source.ID) else {
+                    return
+                }
+            }
+            if let destination = destination{
+                guard (currentStation.ID != destination.ID) else {
+                    return
+                }
+            }
             var currentLinePoint = UIImageView()
             var currentStationLabel = UILabel()
             if (source == nil){
@@ -443,6 +453,8 @@ class PathTableViewCell: UITableViewCell {
         stationNameLabel.text = station?.name
         if station!.typeInPath!.contains("Source") || station!.typeInPath!.contains("Destination") || station!.typeInPath!.contains("Transfer") {
             stationNameLabel.font = UIFont.preferredFont(forTextStyle: .title2)
+        } else {
+            stationNameLabel.font = UIFont.systemFont(ofSize: 17)
         }
         let imageName =  station!.typeInPath!
         let stationImage = UIImage(named: "Path Icons/" + imageName)!

@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Metro Navigator
+
+  Created by Illia Lysenko on 5/5/17.
+  Copyright © 2017 intellogic. All rights reserved.
+*/
+
+"Arrival at" = "Прибуття о";
+"minutes" = "хв";
+"fromLabelPlaceholder" = "Звiдки";
+"toLabelPaceholder" = "Куди";
