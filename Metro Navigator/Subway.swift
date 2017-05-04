@@ -73,7 +73,7 @@ class Subway {
         return stationsListByLine
     }
     
-    func calculatePath(from sourceID: Int, to destinationID: Int) -> ([Int], Int, Int, (Int, Int, String)?) {
+    func calculatePath(from sourceID: Int, to destinationID: Int) -> ([Subway.Station], Int, Int, [(Int, Int, String)]?) {
         var usedStations = Array(repeating: false, count: stations.count)
         var distances = Array(repeating: Int.max, count: stations.count)
         var parent = Array(repeating: -1, count: stations.count)
@@ -102,24 +102,51 @@ class Subway {
         }
         
         var currentID = destinationID
-        var path = [Int]()
+        var path: [Subway.Station] = []
         var time = 0
         var numberOfTransfers = 0
-        var lineTransferInformation: (Int, Int, String)? = nil
+        var lineTransferInformation: [(Int, Int, String)]? = nil
         while currentID != -1 {
-            path.append(currentID)
+            path.append(stations[currentID])
             if (parent[currentID] != -1) {
                 time += adjacentStations[currentID][parent[currentID]]!
                 if stations[parent[currentID]].line != stations[currentID].line
                 {
                     numberOfTransfers += 1
-                    lineTransferInformation = (parent[currentID], currentID, stations[parent[currentID]].line + "-" + stations[currentID].line)
+                    if (lineTransferInformation == nil){
+                        lineTransferInformation = [(parent[currentID], currentID, stations[parent[currentID]].line + "-" + stations[currentID].line)]
+                    } else {
+                        lineTransferInformation?.append((parent[currentID], currentID, stations[parent[currentID]].line + "-" + stations[currentID].line))
+                    }
                 }
             }
             currentID = parent[currentID]
         }
-        
-        return (path.reversed(), time, numberOfTransfers, lineTransferInformation)
+        path = path.reversed()
+        for index in 0..<(path.count) {
+            var typeString = path[index].line
+            switch index {
+                case 0:
+                    typeString += "Source"
+                    if (path[index].line != path[index + 1].line) {
+                        typeString += "Transfer"
+                    }
+                case path.count - 1:
+                    typeString += "Destination"
+                    if (path[index].line != path[index - 1].line) {
+                        typeString += "Transfer"
+                    }
+                case let index where (path[index].line != path[index + 1].line):
+                    typeString += "FirstInTransfer"
+                case let index where (path[index].line != path[index - 1].line):
+                    typeString += "SecondInTransfer"
+                default:
+                    typeString += "Default"
+            }
+            path[index].typeInPath = typeString
+            print(path[index].name + " : " + path[index].typeInPath!)
+        }
+        return (path, time, numberOfTransfers, lineTransferInformation)
     }
     
     
@@ -129,6 +156,7 @@ class Subway {
         let line: String
         var label: UILabel?
         let position: CGPoint
+        var typeInPath: String?
                 
         init(name: String, ID: Int, line: String, position: CGPoint) {
             self.name = name

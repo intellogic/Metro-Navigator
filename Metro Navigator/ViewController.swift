@@ -33,7 +33,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     var sourceIsChosen = false
     var destinationIsChosen = false
     
-    var path: [Int]?
+    var path: [Subway.Station]?
     
     var pathControlViewFrameOrigin: CGPoint {
         get {
@@ -180,9 +180,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     private func deactivateStationsBetweenSourceAndDestination(){
         if let path = path {
-            for index in path {
-                if index != source?.ID && index != destination?.ID {
-                    mapView.deactivate(subway.stations[index])
+            for station in path {
+                if station.ID != source?.ID && station.ID != destination?.ID {
+                    mapView.deactivate(station)
                 }
 
                 
@@ -204,9 +204,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         if let source = source, let destination = destination, source.ID != destination.ID {
             let (newPath, time, _, info) = subway.calculatePath(from: source.ID, to: destination.ID)
             path = newPath
-            if let info = info {
-                print(info)
-            }
             pathControlViewIsTransformed = false
             hideStationsOutsidePath()
             setPathAndArrivalTime(for: time)
@@ -312,7 +309,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     private func hideStationsOutsidePath(){
         if let path = path {
             for station in subway.stations {
-                if !path.contains(station.ID){
+                if !path.contains(where: {
+                    $0.ID == station.ID
+                }) {
                     mapView.hide(station: station)
                 }
             }
@@ -322,7 +321,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     private func showStationsOutsidePath(){
         if let path = path {
             for station in subway.stations {
-                if !path.contains(station.ID){
+                if !path.contains(where: {
+                    $0.ID == station.ID
+                }) {
                     mapView.show(station: station)
                 }
             }
@@ -419,7 +420,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let pathTableCell = self.pathTableView.dequeueReusableCell(withIdentifier: "pathTableViewCell", for: indexPath) as! PathTableViewCell
-        pathTableCell.station = self.subway.stations[self.path![indexPath.row]]
+        pathTableCell.station = self.path![indexPath.row]
         return pathTableCell
     }
     
@@ -430,6 +431,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
 class PathTableViewCell: UITableViewCell {
     @IBOutlet weak var stationNameLabel: UILabel!
+    @IBOutlet weak var stationInPathImageView: UIImageView!
+    
     var station: Subway.Station? {
         didSet {
             updateUI()
@@ -438,6 +441,13 @@ class PathTableViewCell: UITableViewCell {
     
     func updateUI(){
         stationNameLabel.text = station?.name
+        if station!.typeInPath!.contains("Source") || station!.typeInPath!.contains("Destination") || station!.typeInPath!.contains("Transfer") {
+            stationNameLabel.font = UIFont.preferredFont(forTextStyle: .title2)
+        }
+        let imageName =  station!.typeInPath!
+        let stationImage = UIImage(named: "Path Icons/" + imageName)!
+        stationInPathImageView.image = stationImage
+        imageView?.frame.size = stationImage.size
     }
 }
 
