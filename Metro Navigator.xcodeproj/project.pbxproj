@@ -25,6 +25,8 @@
 		BA1D7C081EB65FBB00887519 /* BinaryHeap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryHeap.swift; sourceTree = "<group>"; };
 		BA2C65B11EABC5B700D735EF /* Kiev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Kiev.plist; sourceTree = "<group>"; };
 		BA2E77241EB79A990030D02C /* RouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteViewController.swift; sourceTree = "<group>"; };
+		BA4925981EBD0E8800694F85 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		BA4925991EBD0E8900694F85 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BA4A93011EA4D7BD00E10055 /* Metro Navigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Metro Navigator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4A93041EA4D7BD00E10055 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA4A93061EA4D7BD00E10055 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				en,
 				Base,
 				uk,
+				ru,
 			);
 			mainGroup = BA4A92F81EA4D7BD00E10055;
 			productRefGroup = BA4A93021EA4D7BD00E10055 /* Products */;
@@ -181,6 +184,7 @@
 			children = (
 				BA4A93091EA4D7BD00E10055 /* Base */,
 				BAB8A7AE1EBBD12400AFDBC7 /* uk */,
+				BA4925981EBD0E8800694F85 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -198,6 +202,7 @@
 			children = (
 				BAB8A7AC1EBBD11800AFDBC7 /* Base */,
 				BAB8A7AF1EBBD12400AFDBC7 /* uk */,
+				BA4925991EBD0E8900694F85 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

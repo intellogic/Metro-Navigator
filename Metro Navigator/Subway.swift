@@ -22,7 +22,8 @@ class Subway {
         var currentID = 0
         for station in stationsArray {
             if let station = station as? [String: Any]{
-                let name = station["name"] as! String
+                let nameString = station["name"] as! String
+                let name = NSLocalizedString(nameString, comment: nameString)
                 let line = station["line"] as! String
                 let origin = station["position"] as! [NSNumber]
                 let position = CGPoint(x: CGFloat(origin[0]), y: CGFloat(origin[1]))

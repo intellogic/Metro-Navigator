@@ -1,0 +1,67 @@
+/* 
+  Localizable.strings
+  Metro Navigator
+
+  Created by Illia Lysenko on 5/5/17.
+  Copyright © 2017 intellogic. All rights reserved.
+*/
+
+"Arrival at" = "Прибытие в";
+"minutes" = "мин";
+"fromLabelPlaceholder" = " Откуда";
+"toLabelPaceholder" = " Куда";
+
+
+//Kyiv Subway Statons' Names
+"Akademmistechko" = "Академгородок";
+"Zhytomyrska" = "Житомирская";
+"Sviatoshyn" = "Святошин";
+"Nyvky" = "Нивки";
+"Beresteiska" = "Берестейская";
+"Shuliavska" = "Шулявская";
+"Politekhnichnyi Instytut" = "Политехнический институт";
+"Vokzalna" = "Вокзальная";
+"Universytet" = "Университет";
+"Teatralna" = "Театральная";
+"Khreshchatyk" = "Крещатик";
+"Arsenalna" = "Арсенальная";
+"Dnipro" = "Днепр";
+"Hidropark" = "Гидропарк";
+"Livoberezhna" = "Левобережная";
+"Darnytsia" = "Дарница";
+"Chernihivska" = "Черниговская";
+"Lisova" = "Лесная";
+"Syrets" = "Сырец";
+"Dorohozhychi" = "Дорогожичи";
+"Lukianivska" = "Лукьяновская";
+"Zoloti Vorota" = "Золотые ворота";
+"Palats Sportu" = "Дворец спорта";
+"Klovska" = "Кловская";
+"Pecherska" = "Печерская";
+"Druzhby Narodiv" = "Дружбы народов";
+"Vydubychi" = "Выдубичи";
+"Slavutych" = "Славутич";
+"Osokorky" = "Осокорки";
+"Pozniaky" = "Позняки";
+"Kharkivska" = "Харьковская";
+"Vyrlytsia" = "Вырлица";
+"Boryspilska" = "Бориспольская";
+"Chervony Khutir" = "Красный хутор";
+"Heroiv Dnipra" = "Героев Днепра";
+"Minska" = "Минская";
+"Obolon" = "Оболонь";
+"Petrivka" = "Петровка";
+"Tarasa Shevchenka" = "Тараса Шевченко";
+"Kontraktova Ploshcha" = "Контрактовая площадь";
+"Poshtova Ploshcha" = "Почтовая площадь";
+"Maidan Nezalezhnosti" = "Майдан Незалежности";
+"Ploshcha Lva Tolstoho" = "Площадь Льва Толстого";
+"Olimpiiska" = "Олимпийская";
+"Palats \"Ukrayina\"" = "Дворец «Украина»";
+"Lybidska" = "Лыбедская";
+"Demiivska" = "Демиевская";
+"Holosiivska" = "Голосеевская";
+"Vasylkivska" = "Васильковская";
+"Vystavkovyi Tsentr" = "Выставочный центр";
+"Ipodrom" = "Ипподром";
+"Teremky" = "Теремки";

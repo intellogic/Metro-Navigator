@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>name</key>
-		<string>Академмістечко</string>
+		<string>Akademmistechko</string>
 		<key>line</key>
 		<string>Red</string>
 		<key>position</key>
@@ -29,7 +29,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Житомирська</string>
+		<string>Zhytomyrska</string>
 		<key>line</key>
 		<string>Red</string>
 		<key>position</key>
@@ -54,7 +54,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Святошин</string>
+		<string>Sviatoshyn</string>
 		<key>line</key>
 		<string>Red</string>
 		<key>position</key>
@@ -79,7 +79,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Нивки</string>
+		<string>Nyvky</string>
 		<key>line</key>
 		<string>Red</string>
 		<key>position</key>
@@ -104,7 +104,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Берестейська</string>
+		<string>Beresteiska</string>
 		<key>line</key>
 		<string>Red</string>
 		<key>position</key>
@@ -129,7 +129,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Шулявська</string>
+		<string>Shuliavska</string>
 		<key>line</key>
 		<string>Red</string>
 		<key>position</key>
@@ -154,7 +154,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Політехнічний інститут</string>
+		<string>Politekhnichnyi Instytut</string>
 		<key>line</key>
 		<string>Red</string>
 		<key>position</key>
@@ -179,7 +179,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Вокзальна</string>
+		<string>Vokzalna</string>
 		<key>line</key>
 		<string>Red</string>
 		<key>position</key>
@@ -204,7 +204,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Університет</string>
+		<string>Universytet</string>
 		<key>line</key>
 		<string>Red</string>
 		<key>position</key>
@@ -229,7 +229,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Театральна</string>
+		<string>Teatralna</string>
 		<key>line</key>
 		<string>Red</string>
 		<key>position</key>
@@ -260,7 +260,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Хрещатик</string>
+		<string>Khreshchatyk</string>
 		<key>line</key>
 		<string>Red</string>
 		<key>position</key>
@@ -291,7 +291,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Арсенальна</string>
+		<string>Arsenalna</string>
 		<key>line</key>
 		<string>Red</string>
 		<key>position</key>
@@ -316,7 +316,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Дніпро</string>
+		<string>Dnipro</string>
 		<key>line</key>
 		<string>Red</string>
 		<key>position</key>
@@ -341,7 +341,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Гідропарк</string>
+		<string>Hidropark</string>
 		<key>line</key>
 		<string>Red</string>
 		<key>position</key>
@@ -366,7 +366,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Лівобережна</string>
+		<string>Livoberezhna</string>
 		<key>line</key>
 		<string>Red</string>
 		<key>position</key>
@@ -391,7 +391,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Дарниця</string>
+		<string>Darnytsia</string>
 		<key>line</key>
 		<string>Red</string>
 		<key>position</key>
@@ -416,7 +416,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Чернігівська</string>
+		<string>Chernihivska</string>
 		<key>line</key>
 		<string>Red</string>
 		<key>position</key>
@@ -441,7 +441,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Лісова</string>
+		<string>Lisova</string>
 		<key>line</key>
 		<string>Red</string>
 		<key>position</key>
@@ -466,7 +466,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Сирець</string>
+		<string>Syrets</string>
 		<key>line</key>
 		<string>Green</string>
 		<key>position</key>
@@ -491,7 +491,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Дорогожичі</string>
+		<string>Dorohozhychi</string>
 		<key>line</key>
 		<string>Green</string>
 		<key>position</key>
@@ -516,7 +516,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Лук&apos;янівська</string>
+		<string>Lukianivska</string>
 		<key>line</key>
 		<string>Green</string>
 		<key>position</key>
@@ -541,7 +541,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Золоті ворота</string>
+		<string>Zoloti Vorota</string>
 		<key>line</key>
 		<string>Green</string>
 		<key>position</key>
@@ -566,7 +566,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Палац спорту</string>
+		<string>Palats Sportu</string>
 		<key>line</key>
 		<string>Green</string>
 		<key>position</key>
@@ -597,7 +597,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Кловська</string>
+		<string>Klovska</string>
 		<key>line</key>
 		<string>Green</string>
 		<key>position</key>
@@ -622,7 +622,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Печерська</string>
+		<string>Pecherska</string>
 		<key>line</key>
 		<string>Green</string>
 		<key>position</key>
@@ -647,7 +647,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Дружби народів</string>
+		<string>Druzhby Narodiv</string>
 		<key>line</key>
 		<string>Green</string>
 		<key>position</key>
@@ -672,7 +672,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Видубичі</string>
+		<string>Vydubychi</string>
 		<key>line</key>
 		<string>Green</string>
 		<key>position</key>
@@ -697,7 +697,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Славутич</string>
+		<string>Slavutych</string>
 		<key>line</key>
 		<string>Green</string>
 		<key>position</key>
@@ -722,7 +722,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Осокорки</string>
+		<string>Osokorky</string>
 		<key>line</key>
 		<string>Green</string>
 		<key>position</key>
@@ -747,7 +747,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Позняки</string>
+		<string>Pozniaky</string>
 		<key>line</key>
 		<string>Green</string>
 		<key>position</key>
@@ -772,7 +772,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Харківська</string>
+		<string>Kharkivska</string>
 		<key>line</key>
 		<string>Green</string>
 		<key>position</key>
@@ -797,7 +797,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Вирлиця</string>
+		<string>Vyrlytsia</string>
 		<key>line</key>
 		<string>Green</string>
 		<key>position</key>
@@ -822,7 +822,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Бориспільська</string>
+		<string>Boryspilska</string>
 		<key>line</key>
 		<string>Green</string>
 		<key>position</key>
@@ -847,7 +847,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Червоний хутір</string>
+		<string>Chervony Khutir</string>
 		<key>line</key>
 		<string>Green</string>
 		<key>position</key>
@@ -872,7 +872,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Героїв Дніпра</string>
+		<string>Heroiv Dnipra</string>
 		<key>line</key>
 		<string>Blue</string>
 		<key>position</key>
@@ -897,7 +897,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Мінська</string>
+		<string>Minska</string>
 		<key>line</key>
 		<string>Blue</string>
 		<key>position</key>
@@ -922,7 +922,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Оболонь</string>
+		<string>Obolon</string>
 		<key>line</key>
 		<string>Blue</string>
 		<key>position</key>
@@ -947,7 +947,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Петрівка</string>
+		<string>Petrivka</string>
 		<key>line</key>
 		<string>Blue</string>
 		<key>position</key>
@@ -972,7 +972,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Тараса Шевченка</string>
+		<string>Tarasa Shevchenka</string>
 		<key>line</key>
 		<string>Blue</string>
 		<key>position</key>
@@ -997,7 +997,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Контрактова площа</string>
+		<string>Kontraktova Ploshcha</string>
 		<key>line</key>
 		<string>Blue</string>
 		<key>position</key>
@@ -1022,7 +1022,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Поштова площа</string>
+		<string>Poshtova Ploshcha</string>
 		<key>line</key>
 		<string>Blue</string>
 		<key>position</key>
@@ -1047,7 +1047,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Майдан Незалежності</string>
+		<string>Maidan Nezalezhnosti</string>
 		<key>line</key>
 		<string>Blue</string>
 		<key>position</key>
@@ -1072,7 +1072,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Площа Льва Толстого</string>
+		<string>Ploshcha Lva Tolstoho</string>
 		<key>line</key>
 		<string>Blue</string>
 		<key>position</key>
@@ -1097,7 +1097,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Олімпійська</string>
+		<string>Olimpiiska</string>
 		<key>line</key>
 		<string>Blue</string>
 		<key>position</key>
@@ -1122,7 +1122,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Палац «Україна»</string>
+		<string>Olimpiiska</string>
 		<key>line</key>
 		<string>Blue</string>
 		<key>position</key>
@@ -1147,7 +1147,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Либідська</string>
+		<string>Lybidska</string>
 		<key>line</key>
 		<string>Blue</string>
 		<key>position</key>
@@ -1172,7 +1172,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Деміївська</string>
+		<string>Demiivska</string>
 		<key>line</key>
 		<string>Blue</string>
 		<key>position</key>
@@ -1197,7 +1197,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Голосіївська</string>
+		<string>Holosiivska</string>
 		<key>line</key>
 		<string>Blue</string>
 		<key>position</key>
@@ -1222,7 +1222,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Васильківська</string>
+		<string>Vasylkivska</string>
 		<key>line</key>
 		<string>Blue</string>
 		<key>position</key>
@@ -1247,7 +1247,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Виставковий центр</string>
+		<string>Vystavkovyi Tsentr</string>
 		<key>line</key>
 		<string>Blue</string>
 		<key>position</key>
@@ -1272,7 +1272,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Іподром</string>
+		<string>Ipodrom</string>
 		<key>line</key>
 		<string>Blue</string>
 		<key>position</key>
@@ -1297,7 +1297,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Теремки</string>
+		<string>Teremky</string>
 		<key>line</key>
 		<string>Blue</string>
 		<key>position</key>
