@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import CoreLocation
 
 
-class ViewController: UIViewController, UIScrollViewDelegate {
+class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var sourceLinePoint: UIImageView!
@@ -27,6 +28,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var pathTableView: UITableView!
     var mapView = SubwayMapView()
     var subway = Subway()
+    
+    var locationManager: CLLocationManager!
     
     var newView: UIView?
     
@@ -136,8 +139,24 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         swapButton.alpha = 0.5
         
         pathControlView.gestureRecognizers = []
+        
+        if (CLLocationManager.authorizationStatus() != .denied && CLLocationManager.authorizationStatus() !=  .restricted) {
+            if (CLLocationManager.locationServicesEnabled()) {
+                locationManager = CLLocationManager()
+                locationManager.delegate = self
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                locationManager.requestWhenInUseAuthorization()
+            }
+        }
+        
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let currentLocation = locations.last {
+            print(currentLocation)
+        }
+        
+    }
     
     var beginPoint = CGPoint.zero
     
