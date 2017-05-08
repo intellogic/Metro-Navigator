@@ -11,7 +11,12 @@
 "fromLabelPlaceholder" = "Звiдки";
 "toLabelPaceholder" = "Куди";
 
+//Kyiv Subway Lines
+"KyivSubwayLine1" = "Святошинсько-Броварська";
+"KyivSubwayLine2" = "Сирецько-Печерська";
+"KyivSubwayLine3" = "Куренівсько-Червоноармійська";
 
+//Kyiv Subway Statons
 "Akademmistechko" = "Академмістечко";
 "Zhytomyrska" = "Житомирська";
 "Sviatoshyn" = "Святошин";
@@ -64,4 +69,4 @@
 "Vystavkovyi Tsentr" = "Виставковий центр";
 "Ipodrom" = "Іподром";
 "Teremky" = "Теремки";
-"Akademmistechko" = "Академгородок";
+

@@ -52,12 +52,20 @@ class SubwayMapView: UIImageView {
     }
     
     func setLabels( stations: inout [Subway.Station]){
-        var number = 0
+        var number = 0    
         for station in stations {
             let name = station.name
             let origin = station.position
-            var label = UILabel()
+            let layoutType: String =  station.labelLayoutType
+            let label = UILabel()
             label.text = name
+            if (layoutType.contains("2Lines")) {
+                let parts = name.components(separatedBy: " ")
+                let newName = parts[0] + "\n" + parts[1]
+                label.text = newName
+                label.textAlignment = .center
+                label.numberOfLines = 0
+            }
             label.font = UIFont(name: "Helvetica", size: 45.0)
             label.layer.cornerRadius = 10
             label.clipsToBounds = true
@@ -65,69 +73,83 @@ class SubwayMapView: UIImageView {
             stations[number].label = label
             var x = origin.x
             var y = origin.y
-            switch number {
-                case 0...6:
-                    x -= label.frame.size.width + stationPointRadius
-                    y -= label.frame.size.height / 2
-                    label.backgroundColor = UIColor.clear
-                case 7, 8, 11, 16:
-                    x += stationPointRadius + 5
-                    y -= label.frame.size.height / 2
-                    label.backgroundColor = UIColor.clear
-                case 9:
-                    x -= label.frame.size.width + stationPointRadius
-                    y -= label.frame.size.height / 2 + 5
-                    label.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.7)
-                case 10:
-                    x += stationPointRadius + 15
-                    y -= label.frame.size.height / 2 + 5
-                    label.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.7)
-                case 12:
-                    x += stationPointRadius + 5
-                    y -= label.frame.size.height / 2 + 5
-                    label.backgroundColor = UIColor.clear
-                case 13:
-                    y += stationPointRadius
-                    label.backgroundColor = UIColor.clear
-                case 14...17:
-                    x += stationPointRadius
-                    y -= label.frame.size.height / 2
-                    label.backgroundColor = UIColor.clear
-                case 18...21:
-                    x -= label.frame.size.width + stationPointRadius
-                    y -= label.frame.size.height / 2
-                    label.backgroundColor = UIColor.clear
-                case 22...33:
-                    x += stationPointRadius
-                    y -= label.frame.size.height / 2
-                    label.backgroundColor = UIColor.clear
-                case 34...40:
-                    x += stationPointRadius
-                    y -= label.frame.size.height / 2
-                    label.backgroundColor = UIColor.clear
-                case 41:
-                    x += stationPointRadius + 15 + 49
-                    y -= label.frame.size.height / 2
-                    label.backgroundColor = UIColor.clear
-                case 42:
-                    x -= label.frame.size.width + stationPointRadius + 15
-                    y -= label.frame.size.height / 2
-                    label.backgroundColor = UIColor.clear
-                case 50:
-                    x -= label.frame.size.width - stationPointRadius
-                    y += stationPointRadius
-                    label.backgroundColor = UIColor.clear
-                case 51:
-                    x -= label.frame.size.width + stationPointRadius
-                    y += stationPointRadius
-                    label.backgroundColor = UIColor.clear
-                case 43...49:
-                    x -= label.frame.size.width + stationPointRadius
-                    y -= label.frame.size.height / 2
-                    label.backgroundColor = UIColor.clear
-                default:
-                    break
+            
+            
+            if layoutType.contains("centerY") {
+                y -= label.frame.height / 2.0
             }
+            
+            if layoutType.contains("centerX") {
+                x -= label.frame.width / 2.0
+            }
+            
+            if layoutType.contains("specialCenterX") {
+                x -= label.frame.width
+            }
+            
+            if layoutType.contains("leftX") {
+                x -= label.frame.width + stationPointRadius
+            }
+            
+            if layoutType.contains("rightX") {
+                x += stationPointRadius
+            }
+            
+            if layoutType.contains("downY") {
+                y += stationPointRadius
+            }
+            
+            if layoutType.contains("upY") {
+                y -= label.frame.height + stationPointRadius
+            }
+            
+            if layoutType.contains("transferLeft") {
+                x += 15
+            }
+            
+            if layoutType.contains("specialTransferLeft") {
+                x += 63.5
+            }
+            
+            if layoutType.contains("transferRight") {
+                x -= 15
+            }
+            
+            if layoutType.contains("notTransparent") {
+                label.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.7)
+            } else {
+                label.backgroundColor = UIColor.clear
+            }
+            
+            /*
+            var layoutLabelType = ""
+            label.backgroundColor = UIColor.clear
+            switch number {
+            case 0...6, 9, 18...21, 42...49, 27,28: //leftX+centerY
+                x -= label.frame.size.width + stationPointRadius
+                y -= label.frame.size.height / 2.0
+                layoutLabelType = "leftX+centerY"
+            case 7, 8, 10, 11, 12, 14...17, 22...26, 31...33, 34...41: //rightX+centerY & transfer for 41
+                x += stationPointRadius
+                y -= label.frame.size.height / 2.0
+                layoutLabelType = "rightX+centerY"
+            case 13, 30: //downY
+                y += stationPointRadius
+                layoutLabelType = "downY"
+            case 29, 50: //centerX + downY
+                x -= label.frame.width / 2.0
+                y += stationPointRadius
+                layoutLabelType = "centerX+downY"
+            case 51: //downY + specialCenterX
+                x -= label.frame.width
+                y += stationPointRadius
+                layoutLabelType = "downY+specialCenterX"
+            default:
+                label.backgroundColor = UIColor.green
+            }
+            */
+            
+            
             number += 1
             label.frame.origin = CGPoint(x: x, y: y)
             self.addSubview(label)

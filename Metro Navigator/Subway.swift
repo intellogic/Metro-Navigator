@@ -26,8 +26,12 @@ class Subway {
                 let name = NSLocalizedString(nameString, comment: nameString)
                 let line = station["line"] as! String
                 let origin = station["position"] as! [NSNumber]
+                let labelLayoutType = station["labelLayoutType"] as! String
                 let position = CGPoint(x: CGFloat(origin[0]), y: CGFloat(origin[1]))
-                stations.append(Station(name: name, ID: currentID, line: line, position: position))
+                let geoPosition = station["geoPosition"] as! [NSNumber]
+                let latitude = Double(geoPosition[0])
+                let longitude = Double(geoPosition[1])
+                stations.append(Station(name: name, ID: currentID, line: line, position: position, latitude: latitude, longitude: longitude, labelLayoutType: labelLayoutType))
                 adjacentStations.append(Dictionary<Int, Int>())
                 currentID += 1
             }
@@ -46,6 +50,7 @@ class Subway {
             }
             currentID += 1
         }
+      
     }
     
     func stationsByLine() -> [[Subway.Station]] {
@@ -86,7 +91,7 @@ class Subway {
             stationIndex += 1
             stationsNodes.append(newNode)
         }
-        var stationsHeap = BinaryHeap(with: stationsNodes)
+        let stationsHeap = BinaryHeap(with: stationsNodes)
         while (stationsHeap.size > 0) {
             let currentStation = stationsHeap.getMin()
             let currentID = currentStation.key
@@ -145,7 +150,6 @@ class Subway {
                     typeString += "Default"
             }
             path[index].typeInPath = typeString
-            print(path[index].name + " : " + path[index].typeInPath!)
         }
         return (path, time, numberOfTransfers, lineTransferInformation)
     }
@@ -158,12 +162,31 @@ class Subway {
         var label: UILabel?
         let position: CGPoint
         var typeInPath: String?
+        let latitude: Double
+        let longitude: Double
+        let labelLayoutType: String
                 
-        init(name: String, ID: Int, line: String, position: CGPoint) {
+        init(name: String, ID: Int, line: String, position: CGPoint, latitude: Double, longitude: Double, labelLayoutType: String) {
             self.name = name
             self.ID = ID
             self.line = line
             self.position = position
+            self.latitude = latitude
+            self.longitude = longitude
+            self.labelLayoutType = labelLayoutType
+        }
+        
+        func lineMark() -> UIImage {
+            switch line {
+            case "Red":
+                return UIImage(named: "red_line_point")!
+            case "Green":
+                return UIImage(named: "green_line_point")!
+            case "Blue":
+                return UIImage(named: "blue_line_point")!
+            default:
+                return UIImage()
+            }
         }
     }
 }

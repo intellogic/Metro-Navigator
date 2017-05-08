@@ -26,15 +26,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
     @IBOutlet weak var arrivalTimeLabel: UILabel!
     @IBOutlet weak var swipeArrowImageView: UIImageView!
     @IBOutlet weak var pathTableView: UITableView!
+    @IBOutlet weak var getLocationButton: UIButton!
+    
+    var beginPoint = CGPoint.zero
+    
     var mapView = SubwayMapView()
     var subway = Subway()
     
     var locationManager: CLLocationManager!
-    
-    var newView: UIView?
-    
-    var sourceIsChosen = false
-    var destinationIsChosen = false
     
     var path: [Subway.Station]?
     
@@ -110,21 +109,25 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        subway = Subway(city: "Kiev")
-        mapView = SubwayMapView(city: "Kiev")
+        subway = Subway(city: User.city)
+        mapView = SubwayMapView(city: User.city)
         mapView.setLabels(stations: &subway.stations)
         
         scrollView.delegate = self
         scrollView.contentSize = mapView.frame.size
         scrollView.addSubview(mapView)
+        scrollView.maximumZoomScale = 0.4
     
         updateMinZoomScaleForSize(size: view.bounds.size)
         
-        var tapLabelRecognizer = UITapGestureRecognizer(target: self, action: #selector(usersTap(tapRecognizer:)))
+        let tapLabelRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleSingleTap(recognizer:)))
         tapLabelRecognizer.numberOfTapsRequired = 1
         tapLabelRecognizer.cancelsTouchesInView = false
         scrollView.addGestureRecognizer(tapLabelRecognizer)
+        
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(recognizer:)))
+        doubleTap.numberOfTapsRequired = 2
+        scrollView.addGestureRecognizer(doubleTap)
     
         pathTableView.delegate = self
         pathTableView.dataSource = self
@@ -140,36 +143,69 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
         
         pathControlView.gestureRecognizers = []
         
+        getLocationButton.isEnabled = true
+        
         if (CLLocationManager.authorizationStatus() != .denied && CLLocationManager.authorizationStatus() !=  .restricted) {
             if (CLLocationManager.locationServicesEnabled()) {
                 locationManager = CLLocationManager()
                 locationManager.delegate = self
-                locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
                 locationManager.requestWhenInUseAuthorization()
+            } else {
+                getLocationButton.isEnabled = false
             }
+        } else {
+            getLocationButton.isEnabled = false
+            
         }
+   
         
+    }
+    
+    func handleDoubleTap(recognizer: UITapGestureRecognizer) {
+        if (scrollView.zoomScale > scrollView.minimumZoomScale) {
+            scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
+        } else {
+            scrollView.setZoomScale(scrollView.maximumZoomScale, animated: true)
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let currentLocation = locations.last {
-            print(currentLocation)
+            var minDistance = currentLocation.distance(from: CLLocation(latitude: subway.stations[0].latitude, longitude: subway.stations[0].longitude))
+            var minDistanceStationID = 0
+            for station in subway.stations {
+                let distance = currentLocation.distance(from: CLLocation(latitude: station.latitude, longitude: station.longitude))
+                if (distance < minDistance){
+                    minDistance = distance
+                    minDistanceStationID = station.ID
+                }
+            }
+            if (source != nil) {
+                deactivateSourceStation()
+            }
+            source = subway.stations[minDistanceStationID]
         }
-        
     }
     
-    var beginPoint = CGPoint.zero
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        return
+    }
     
-    func swipe(swipeRecognizer: UIPanGestureRecognizer){
-        let location = swipeRecognizer.location(in: view)
-        switch swipeRecognizer.state {
+    @IBAction func getLocation(_ sender: UIButton) {
+        locationManager.requestLocation()
+    }
+    
+   
+    
+    func handlePan(panRecognizer: UIPanGestureRecognizer){
+        let location = panRecognizer.location(in: view)
+        switch panRecognizer.state {
             case .began:
-                beginPoint = swipeRecognizer.location(in: view)
-                print(beginPoint)
+                beginPoint = panRecognizer.location(in: view)
                 pathControlViewIsInTranformationProcess = true
             case .changed:
-                let newPanPoint = swipeRecognizer.location(in: view)
-                print(newPanPoint)
+                let newPanPoint = panRecognizer.location(in: view)
                 pathControlView.frame.origin.y -= beginPoint.y - newPanPoint.y
                 beginPoint = newPanPoint
                 pathControlViewIsInTranformationProcess = true
@@ -203,15 +239,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
                 if station.ID != source?.ID && station.ID != destination?.ID {
                     mapView.deactivate(station)
                 }
-
-                
             }
         }
     }
     
     private func movePathControlViewToOrigin(){
         pathControlView.frame.origin = pathControlViewFrameOrigin
-        print(pathControlViewFrameOrigin)
     }
     
     func updatePathTableViewFrame(){
@@ -221,7 +254,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
     
     private func findPath(){
         if let source = source, let destination = destination, source.ID != destination.ID {
-            let (newPath, time, _, info) = subway.calculatePath(from: source.ID, to: destination.ID)
+            let (newPath, time, _, _) = subway.calculatePath(from: source.ID, to: destination.ID)
+            UIView.animate(withDuration: 0.5, animations: {
+                self.updateMinZoomScaleForSize(size: self.view.frame.size)
+            })
             path = newPath
             pathControlViewIsTransformed = false
             hideStationsOutsidePath()
@@ -231,7 +267,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
             pathTableView.reloadData()
             pathControlView.isUserInteractionEnabled = true
             self.swipeArrowImageView.image = UIImage(named: "SwipeUpArrow")
-            var swipeUpGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(swipe(swipeRecognizer:)))
+            let swipeUpGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan(panRecognizer:)))
             swipeUpGestureRecognizer.minimumNumberOfTouches = 1
             pathControlView.addGestureRecognizer(swipeUpGestureRecognizer)
         }
@@ -241,9 +277,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
         let timeInMinutes = time / 60
         pathTimeLabel.text = String(timeInMinutes) + " " + NSLocalizedString("minutes", comment: "minutes")
         var date = Date()
-        print(date.description)
         date.addTimeInterval(TimeInterval(time))
-        print(date.description)
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .short
         dateFormatter.locale = Locale.current
@@ -265,8 +299,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setImageViewAtTheCenterOfScrollView()
-        //controlView.frame = CGRect(origin: controlView.frame.origin, size: CGSize(width: view.frame.width, height: view.frame.height * 0.08))
-        print("DID LAYOUT")
         if (!pathControlViewIsInTranformationProcess || !pathControlViewIsTransformed) {
             pathControlView.frame.origin = pathControlViewFrameOrigin
         }
@@ -292,7 +324,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
     
     private func prepareForSelectingView(forSource: Bool){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let selectStationViewController = storyboard.instantiateViewController(withIdentifier: "SelectStationView") as! SelectStationViewController
+        let selectStationViewController = storyboard.instantiateViewController(withIdentifier: "SelectStationView") as! SelectStationTableViewController
         selectStationViewController.stations = subway.stationsByLine()
         selectStationViewController.forSource = forSource
         present(selectStationViewController, animated: true, completion: nil)
@@ -303,13 +335,18 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
         sourceLinePoint.image = nil
         sourceLabel.text = NSLocalizedString("fromLabelPlaceholder", comment: "fromLabelPlaceholder")
         sourceListOrCancelButton.imageView?.image = UIImage(named: "list_icon")
+        if let source = source {
+            mapView.deactivate(source)
+        }
     }
     
     private func activateSourceStation(){
-        sourceLinePoint.image = UIImage.point(for: source!.line)
-        sourceLabel.text = source!.name
-        sourceListOrCancelButton.imageView?.image = UIImage(named: "cancel")
-        mapView.activate(source!)
+        if let source = source {
+            sourceLinePoint.image = source.lineMark()
+            sourceLabel.text = source.name
+            sourceListOrCancelButton.imageView?.image = UIImage(named: "cancel")
+            mapView.activate(source)
+        }
     }
     
     private func deactivateDestinationStation(){
@@ -319,10 +356,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
     }
     
     private func activateDestinationStation(){
-        destinationLinePoint.image = UIImage.point(for: destination!.line)
-        destinationLabel.text = destination!.name
-        destinationListOrCancelButton.imageView?.image = UIImage(named: "cancel")
-        mapView.activate(destination!)
+        if let destination = destination {
+            destinationLinePoint.image = destination.lineMark()
+            destinationLabel.text = destination.name
+            destinationListOrCancelButton.imageView?.image = UIImage(named: "cancel")
+            mapView.activate(destination)
+        }
     }
     
     private func hideStationsOutsidePath(){
@@ -350,11 +389,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
     }
     
     
-    func usersTap(tapRecognizer: UITapGestureRecognizer){
-        guard (sourceIsChosen != true || destinationIsChosen != true) else {
+    func handleSingleTap(recognizer: UITapGestureRecognizer){
+        guard (source == nil || destination == nil) else {
             return
         }
-        let tapLocation = tapRecognizer.location(in: self.mapView)
+        let tapLocation = recognizer.location(in: self.mapView)
         if let currentStation = checkIfSomeStationIsChosen(for: tapLocation) {
             if let source = source{
                 guard (currentStation.ID != source.ID) else {
@@ -366,8 +405,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
                     return
                 }
             }
-            var currentLinePoint = UIImageView()
-            var currentStationLabel = UILabel()
+
             if (source == nil){
                 source = currentStation
             } else if (destination == nil){
@@ -382,7 +420,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
         if CGRect(origin: CGPoint.zero, size: mapView.image!.size).contains(tapLocation){
             var index = 0
             for view in mapView.subviews {
-                if view.frame.contains(tapLocation), let view = view as? UILabel {
+                if view.frame.contains(tapLocation) {
                     return subway.stations[index]
                 }
                 index += 1
@@ -490,19 +528,3 @@ extension CGPoint {
         return (dx * dx + dy * dy).squareRoot()
     }
 }
-
-extension UIImage {
-    static func point(for line: String) -> UIImage {
-        switch line {
-        case "Red":
-            return UIImage(named: "red_line_point")!
-        case "Green":
-            return UIImage(named: "green_line_point")!
-        case "Blue":
-            return UIImage(named: "blue_line_point")!
-        default:
-            return UIImage()
-        }
-    }
-}
-

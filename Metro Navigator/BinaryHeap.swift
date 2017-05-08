@@ -87,9 +87,4 @@ class BinaryHeap <Key: Comparable, Value: Comparable> {
         }
     }
     
-    func printHeap() {
-        for node in nodes {
-            print(node.value)
-        }
-    }
 }

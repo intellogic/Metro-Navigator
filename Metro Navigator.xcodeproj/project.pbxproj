@@ -7,22 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA0D0EF81EBF3F8200FF512B /* SelectStationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0D0EF71EBF3F8200FF512B /* SelectStationTableViewCell.swift */; };
 		BA1D7C091EB65FBB00887519 /* BinaryHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D7C081EB65FBB00887519 /* BinaryHeap.swift */; };
-		BA2C65B21EABC5B700D735EF /* Kiev.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA2C65B11EABC5B700D735EF /* Kiev.plist */; };
+		BA2C65B21EABC5B700D735EF /* Kyiv.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA2C65B11EABC5B700D735EF /* Kyiv.plist */; };
 		BA4A93051EA4D7BD00E10055 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4A93041EA4D7BD00E10055 /* AppDelegate.swift */; };
 		BA4A93071EA4D7BD00E10055 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4A93061EA4D7BD00E10055 /* ViewController.swift */; };
 		BA4A930A1EA4D7BD00E10055 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4A93081EA4D7BD00E10055 /* Main.storyboard */; };
 		BA4A930C1EA4D7BD00E10055 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4A930B1EA4D7BD00E10055 /* Assets.xcassets */; };
 		BA4A930F1EA4D7BD00E10055 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4A930D1EA4D7BD00E10055 /* LaunchScreen.storyboard */; };
 		BAB8A7AB1EBBD11800AFDBC7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAB8A7AD1EBBD11800AFDBC7 /* Localizable.strings */; };
+		BAC759AA1EC0E8AA00CB93F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC759A91EC0E8AA00CB93F7 /* User.swift */; };
 		BAD25B0E1EAA84B80011E13E /* SubwayMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD25B0D1EAA84B80011E13E /* SubwayMapView.swift */; };
 		BAD6645B1EAE68150018FF66 /* Subway.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD6645A1EAE68150018FF66 /* Subway.swift */; };
-		BAFCD2D41EB1147700D58071 /* SelectStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFCD2D31EB1147700D58071 /* SelectStationViewController.swift */; };
+		BAFCD2D41EB1147700D58071 /* SelectStationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFCD2D31EB1147700D58071 /* SelectStationTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA0D0EF71EBF3F8200FF512B /* SelectStationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectStationTableViewCell.swift; sourceTree = "<group>"; };
 		BA1D7C081EB65FBB00887519 /* BinaryHeap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryHeap.swift; sourceTree = "<group>"; };
-		BA2C65B11EABC5B700D735EF /* Kiev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Kiev.plist; sourceTree = "<group>"; };
+		BA2C65B11EABC5B700D735EF /* Kyiv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Kyiv.plist; sourceTree = "<group>"; };
 		BA4925981EBD0E8800694F85 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		BA4925991EBD0E8900694F85 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BA4A93011EA4D7BD00E10055 /* Metro Navigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Metro Navigator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,9 +38,10 @@
 		BAB8A7AC1EBBD11800AFDBC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BAB8A7AE1EBBD12400AFDBC7 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
 		BAB8A7AF1EBBD12400AFDBC7 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BAC759A91EC0E8AA00CB93F7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BAD25B0D1EAA84B80011E13E /* SubwayMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubwayMapView.swift; sourceTree = "<group>"; };
 		BAD6645A1EAE68150018FF66 /* Subway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subway.swift; sourceTree = "<group>"; };
-		BAFCD2D31EB1147700D58071 /* SelectStationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectStationViewController.swift; sourceTree = "<group>"; };
+		BAFCD2D31EB1147700D58071 /* SelectStationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectStationTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,10 +74,12 @@
 		BA4A93031EA4D7BD00E10055 /* Metro Navigator */ = {
 			isa = PBXGroup;
 			children = (
-				BA2C65B11EABC5B700D735EF /* Kiev.plist */,
+				BA2C65B11EABC5B700D735EF /* Kyiv.plist */,
+				BAC759A91EC0E8AA00CB93F7 /* User.swift */,
 				BA4A93041EA4D7BD00E10055 /* AppDelegate.swift */,
 				BA4A93061EA4D7BD00E10055 /* ViewController.swift */,
-				BAFCD2D31EB1147700D58071 /* SelectStationViewController.swift */,
+				BAFCD2D31EB1147700D58071 /* SelectStationTableViewController.swift */,
+				BA0D0EF71EBF3F8200FF512B /* SelectStationTableViewCell.swift */,
 				BAD25B0D1EAA84B80011E13E /* SubwayMapView.swift */,
 				BAD6645A1EAE68150018FF66 /* Subway.swift */,
 				BA1D7C081EB65FBB00887519 /* BinaryHeap.swift */,
@@ -152,7 +158,7 @@
 				BA4A930F1EA4D7BD00E10055 /* LaunchScreen.storyboard in Resources */,
 				BA4A930C1EA4D7BD00E10055 /* Assets.xcassets in Resources */,
 				BA4A930A1EA4D7BD00E10055 /* Main.storyboard in Resources */,
-				BA2C65B21EABC5B700D735EF /* Kiev.plist in Resources */,
+				BA2C65B21EABC5B700D735EF /* Kyiv.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,9 +171,11 @@
 			files = (
 				BA1D7C091EB65FBB00887519 /* BinaryHeap.swift in Sources */,
 				BAD25B0E1EAA84B80011E13E /* SubwayMapView.swift in Sources */,
+				BA0D0EF81EBF3F8200FF512B /* SelectStationTableViewCell.swift in Sources */,
 				BA4A93071EA4D7BD00E10055 /* ViewController.swift in Sources */,
+				BAC759AA1EC0E8AA00CB93F7 /* User.swift in Sources */,
 				BAD6645B1EAE68150018FF66 /* Subway.swift in Sources */,
-				BAFCD2D41EB1147700D58071 /* SelectStationViewController.swift in Sources */,
+				BAFCD2D41EB1147700D58071 /* SelectStationTableViewController.swift in Sources */,
 				BA4A93051EA4D7BD00E10055 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

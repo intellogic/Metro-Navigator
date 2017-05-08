@@ -12,7 +12,13 @@
 "toLabelPaceholder" = "To";
 
 
-//Kyiv Subway Statons' Names
+//Kyiv Subway Lines
+"KyivSubwayLine1" = "Sviatoshynsko-Brovarska";
+"KyivSubwayLine2" = "Syretsko-Pecherska";
+"KyivSubwayLine3" = "Kurenivsko-Chervonoarmiyska";
+
+
+//Kyiv Subway Statons
 "Akademmistechko" = "Akademmistechko";
 "Zhytomyrska" = "Zhytomyrska";
 "Sviatoshyn" = "Sviatoshyn";

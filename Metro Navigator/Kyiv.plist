@@ -12,11 +12,8 @@
 			<real>409.5</real>
 			<real>681.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -25,6 +22,11 @@
 				<key>interval</key>
 				<integer>130</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.464936</real>
+			<real>30.355272</real>
 		</array>
 	</dict>
 	<dict>
@@ -37,11 +39,8 @@
 			<integer>478</integer>
 			<real>747.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -50,6 +49,11 @@
 				<key>interval</key>
 				<integer>160</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.4560768</real>
+			<real>30.3649982</real>
 		</array>
 	</dict>
 	<dict>
@@ -62,11 +66,8 @@
 			<real>561.5</real>
 			<real>830.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -75,6 +76,11 @@
 				<key>interval</key>
 				<integer>80</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.457771</real>
+			<real>30.390585</real>
 		</array>
 	</dict>
 	<dict>
@@ -87,11 +93,8 @@
 			<real>629.5</real>
 			<real>899.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -100,6 +103,11 @@
 				<key>interval</key>
 				<integer>100</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.458631</real>
+			<real>30.403915</real>
 		</array>
 	</dict>
 	<dict>
@@ -112,11 +120,8 @@
 			<integer>719</integer>
 			<real>988.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -125,6 +130,11 @@
 				<key>interval</key>
 				<integer>170</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.45927</real>
+			<real>30.419014</real>
 		</array>
 	</dict>
 	<dict>
@@ -137,11 +147,8 @@
 			<integer>798</integer>
 			<real>1068.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -150,6 +157,11 @@
 				<key>interval</key>
 				<integer>100</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.454489</real>
+			<real>30.447239</real>
 		</array>
 	</dict>
 	<dict>
@@ -162,11 +174,8 @@
 			<real>879.5</real>
 			<integer>1149</integer>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -175,6 +184,11 @@
 				<key>interval</key>
 				<integer>120</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.450953</real>
+			<real>30.465144</real>
 		</array>
 	</dict>
 	<dict>
@@ -187,11 +201,8 @@
 			<real>1067.5</real>
 			<real>1134.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -200,6 +211,11 @@
 				<key>interval</key>
 				<integer>100</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.44139</real>
+			<real>30.489041</real>
 		</array>
 	</dict>
 	<dict>
@@ -212,11 +228,8 @@
 			<integer>1140</integer>
 			<integer>1063</integer>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -225,6 +238,11 @@
 				<key>interval</key>
 				<integer>110</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.442925</real>
+			<real>30.503718</real>
 		</array>
 	</dict>
 	<dict>
@@ -237,11 +255,8 @@
 			<real>1514.5</real>
 			<real>989.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY+transferRight+notTransparent</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -250,12 +265,17 @@
 				<key>interval</key>
 				<integer>90</integer>
 			</dict>
-            <dict>
-                <key>station</key>
-                <integer>21</integer>
-                <key>interval</key>
-                <integer>180</integer>
-            </dict>
+			<dict>
+				<key>station</key>
+				<integer>21</integer>
+				<key>interval</key>
+				<integer>180</integer>
+			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.444851</real>
+			<real>30.516073</real>
 		</array>
 	</dict>
 	<dict>
@@ -268,11 +288,8 @@
 			<real>1722.5</real>
 			<real>989.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY+transferLeft+notTransparent</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -281,12 +298,17 @@
 				<key>interval</key>
 				<integer>120</integer>
 			</dict>
-            <dict>
-                <key>station</key>
-                <integer>41</integer>
-                <key>interval</key>
-                <integer>180</integer>
-            </dict>
+			<dict>
+				<key>station</key>
+				<integer>41</integer>
+				<key>interval</key>
+				<integer>180</integer>
+			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.447056</real>
+			<real>30.525361</real>
 		</array>
 	</dict>
 	<dict>
@@ -299,11 +321,8 @@
 			<real>1925.5</real>
 			<real>1063.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -312,6 +331,11 @@
 				<key>interval</key>
 				<integer>100</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.443017</real>
+			<real>30.547733</real>
 		</array>
 	</dict>
 	<dict>
@@ -324,11 +348,8 @@
 			<integer>1998</integer>
 			<integer>1135</integer>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -337,6 +358,11 @@
 				<key>interval</key>
 				<integer>140</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.441228</real>
+			<real>30.559337</real>
 		</array>
 	</dict>
 	<dict>
@@ -349,11 +375,8 @@
 			<integer>2118</integer>
 			<real>1183.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>downY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -362,6 +385,11 @@
 				<key>interval</key>
 				<integer>140</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.445937</real>
+			<real>30.576894</real>
 		</array>
 	</dict>
 	<dict>
@@ -374,11 +402,8 @@
 			<real>2251.5</real>
 			<integer>1151</integer>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -387,6 +412,11 @@
 				<key>interval</key>
 				<integer>110</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.451877</real>
+			<real>30.598167</real>
 		</array>
 	</dict>
 	<dict>
@@ -399,11 +429,8 @@
 			<real>2322.5</real>
 			<integer>1080</integer>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -412,6 +439,11 @@
 				<key>interval</key>
 				<integer>120</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.4557451</real>
+			<real>30.6118985</real>
 		</array>
 	</dict>
 	<dict>
@@ -424,11 +456,8 @@
 			<integer>2385</integer>
 			<real>1017.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -437,6 +466,11 @@
 				<key>interval</key>
 				<integer>120</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.459921</real>
+			<real>30.630375</real>
 		</array>
 	</dict>
 	<dict>
@@ -449,20 +483,22 @@
 			<integer>2457</integer>
 			<real>945.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
 		<key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>16</integer>
-                <key>interval</key>
-                <integer>120</integer>
-            </dict>
-        </array>
+		<array>
+			<dict>
+				<key>station</key>
+				<integer>16</integer>
+				<key>interval</key>
+				<integer>120</integer>
+			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.464778</real>
+			<real>30.645609</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -474,11 +510,8 @@
 			<real>1166.5</real>
 			<real>610.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -487,6 +520,11 @@
 				<key>interval</key>
 				<integer>120</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.476218</real>
+			<real>30.430678</real>
 		</array>
 	</dict>
 	<dict>
@@ -499,11 +537,8 @@
 			<integer>1273</integer>
 			<integer>717</integer>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -512,6 +547,11 @@
 				<key>interval</key>
 				<integer>200</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.473119</real>
+			<real>30.452247</real>
 		</array>
 	</dict>
 	<dict>
@@ -524,11 +564,8 @@
 			<integer>1356</integer>
 			<integer>800</integer>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -537,6 +574,11 @@
 				<key>interval</key>
 				<integer>270</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.461179</real>
+			<real>30.483671</real>
 		</array>
 	</dict>
 	<dict>
@@ -549,11 +591,8 @@
 			<integer>1465</integer>
 			<real>937.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY+transferRight</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -562,6 +601,11 @@
 				<key>interval</key>
 				<integer>75</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.448667</real>
+			<real>30.514292</real>
 		</array>
 	</dict>
 	<dict>
@@ -574,11 +618,8 @@
 			<real>1603.5</real>
 			<real>1214.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY+transferLeft</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -587,13 +628,18 @@
 				<key>interval</key>
 				<integer>90</integer>
 			</dict>
-            <dict>
-                <key>station</key>
-                <integer>42</integer>
-                <key>interval</key>
-                <integer>180</integer>
-            </dict>
-        </array>
+			<dict>
+				<key>station</key>
+				<integer>42</integer>
+				<key>interval</key>
+				<integer>180</integer>
+			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.439647</real>
+			<real>30.519533</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -605,11 +651,8 @@
 			<real>1672.5</real>
 			<real>1332.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -618,6 +661,11 @@
 				<key>interval</key>
 				<integer>105</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.435902</real>
+			<real>30.533423</real>
 		</array>
 	</dict>
 	<dict>
@@ -630,11 +678,8 @@
 			<real>1672.5</real>
 			<real>1425.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
 		<key>neighbors</key>
 		<array>
 			<dict>
@@ -643,6 +688,11 @@
 				<key>interval</key>
 				<integer>90</integer>
 			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.426553</real>
+			<real>30.54012</real>
 		</array>
 	</dict>
 	<dict>
@@ -655,20 +705,22 @@
 			<real>1672.5</real>
 			<real>1518.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>26</integer>
+				<key>interval</key>
+				<integer>135</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>26</integer>
-                <key>interval</key>
-                <integer>135</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.416841</real>
+			<real>30.546918</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -680,20 +732,22 @@
 			<real>1724.5</real>
 			<real>1632.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>27</integer>
+				<key>interval</key>
+				<integer>290</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>27</integer>
-                <key>interval</key>
-                <integer>290</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.402102</real>
+			<real>30.56016</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -705,20 +759,22 @@
 			<real>1877.5</real>
 			<real>1786.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>28</integer>
+				<key>interval</key>
+				<integer>75</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>28</integer>
-                <key>interval</key>
-                <integer>75</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.394264</real>
+			<real>30.604859</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -730,20 +786,22 @@
 			<real>1955.55</real>
 			<real>1863.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>29</integer>
+				<key>interval</key>
+				<integer>120</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>29</integer>
-                <key>interval</key>
-                <integer>120</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.395248</real>
+			<real>30.616231</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -755,20 +813,22 @@
 			<real>2057.5</real>
 			<real>1909.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>centerX+downY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>30</integer>
+				<key>interval</key>
+				<integer>110</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>30</integer>
-                <key>interval</key>
-                <integer>110</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.397944</real>
+			<real>30.634579</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -780,20 +840,22 @@
 			<real>2200.5</real>
 			<real>1909.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>downY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>31</integer>
+				<key>interval</key>
+				<integer>120</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>31</integer>
-                <key>interval</key>
-                <integer>120</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.40073</real>
+			<real>30.652474</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -805,20 +867,22 @@
 			<real>2307.5</real>
 			<real>1871.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>32</integer>
+				<key>interval</key>
+				<integer>120</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>32</integer>
-                <key>interval</key>
-                <integer>120</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.40312</real>
+			<real>30.666891</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -830,20 +894,22 @@
 			<real>2376.5</real>
 			<real>1802.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>33</integer>
+				<key>interval</key>
+				<integer>90</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>33</integer>
-                <key>interval</key>
-                <integer>90</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.403375</real>
+			<real>30.684195</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -855,20 +921,22 @@
 			<integer>2448</integer>
 			<integer>1731</integer>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
 		<key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>32</integer>
-                <key>interval</key>
-                <integer>90</integer>
-            </dict>
-        </array>
+		<array>
+			<dict>
+				<key>station</key>
+				<integer>32</integer>
+				<key>interval</key>
+				<integer>90</integer>
+			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.409473</real>
+			<real>30.696203</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -880,20 +948,22 @@
 			<real>1673.5</real>
 			<real>199.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>35</integer>
+				<key>interval</key>
+				<integer>210</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>35</integer>
-                <key>interval</key>
-                <integer>210</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.522739</real>
+			<real>30.498971</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -905,20 +975,22 @@
 			<real>1673.5</real>
 			<real>303.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>36</integer>
+				<key>interval</key>
+				<integer>90</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>36</integer>
-                <key>interval</key>
-                <integer>90</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>53.8494515</real>
+			<real>27.4749699</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -930,20 +1002,22 @@
 			<real>1673.5</real>
 			<real>409.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>37</integer>
+				<key>interval</key>
+				<integer>130</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>37</integer>
-                <key>interval</key>
-                <integer>130</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.501466</real>
+			<real>30.498228</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -955,20 +1029,22 @@
 			<real>1673.5</real>
 			<real>512.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>38</integer>
+				<key>interval</key>
+				<integer>145</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>38</integer>
-                <key>interval</key>
-                <integer>145</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.486078</real>
+			<real>30.497851</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -980,20 +1056,22 @@
 			<real>1673.5</real>
 			<real>605.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>39</integer>
+				<key>interval</key>
+				<integer>210</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>39</integer>
-                <key>interval</key>
-                <integer>210</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.474155</real>
+			<real>30.503491</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -1005,20 +1083,22 @@
 			<real>1673.5</real>
 			<real>709.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>40</integer>
+				<key>interval</key>
+				<integer>80</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>40</integer>
-                <key>interval</key>
-                <integer>80</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.46605</real>
+			<real>30.514996</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -1030,20 +1110,22 @@
 			<real>1673.5</real>
 			<real>815.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>41</integer>
+				<key>interval</key>
+				<integer>95</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>41</integer>
-                <key>interval</key>
-                <integer>95</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.4589633</real>
+			<real>30.5247585</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -1055,20 +1137,22 @@
 			<real>1673.5</real>
 			<real>938.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>rightX+centerY+specialTransferLeft</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>42</integer>
+				<key>interval</key>
+				<integer>95</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>42</integer>
-                <key>interval</key>
-                <integer>95</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.447973</real>
+			<real>30.525273</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -1080,20 +1164,22 @@
 			<real>1533.5</real>
 			<real>1214.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY+transferRight</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>43</integer>
+				<key>interval</key>
+				<integer>85</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>43</integer>
-                <key>interval</key>
-                <integer>85</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.440075</real>
+			<real>30.518021</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -1105,24 +1191,26 @@
 			<real>1467.5</real>
 			<real>1332.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>44</integer>
+				<key>interval</key>
+				<integer>90</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>44</integer>
-                <key>interval</key>
-                <integer>90</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.4321744</real>
+			<real>30.5158567</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Palats "Ukrayina"</string>
+		<string>Palats &quot;Ukrayina&quot;</string>
 		<key>line</key>
 		<string>Blue</string>
 		<key>position</key>
@@ -1130,20 +1218,23 @@
 			<real>1467.5</real>
 			<real>1424.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY</string>
+
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>45</integer>
+				<key>interval</key>
+				<integer>75</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>45</integer>
-                <key>interval</key>
-                <integer>75</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.421186</real>
+			<real>30.520611</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -1155,20 +1246,22 @@
 			<real>1467.5</real>
 			<real>1517.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>46</integer>
+				<key>interval</key>
+				<integer>90</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>46</integer>
-                <key>interval</key>
-                <integer>90</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.414438</real>
+			<real>30.524882</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -1180,20 +1273,22 @@
 			<real>1380.5</real>
 			<real>1664.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>47</integer>
+				<key>interval</key>
+				<integer>85</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>47</integer>
-                <key>interval</key>
-                <integer>85</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.404788</real>
+			<real>30.516868</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -1205,20 +1300,22 @@
 			<real>1312.5</real>
 			<real>1729.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>48</integer>
+				<key>interval</key>
+				<integer>120</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>48</integer>
-                <key>interval</key>
-                <integer>120</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.39746</real>
+			<real>30.508361</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -1230,20 +1327,22 @@
 			<real>1245.63</real>
 			<real>1795.69</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY</string>
+		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>49</integer>
+				<key>interval</key>
+				<integer>180</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>49</integer>
-                <key>interval</key>
-                <integer>180</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.393251</real>
+			<real>30.48767</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -1255,20 +1354,21 @@
 			<real>1178.5</real>
 			<real>1863.5</real>
 		</array>
-		<key>labelPosition</key>
+        <key>labelLayoutType</key>
+        <string>leftX+centerY</string>		<key>neighbors</key>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
+			<dict>
+				<key>station</key>
+				<integer>50</integer>
+				<key>interval</key>
+				<integer>80</integer>
+			</dict>
 		</array>
-        <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>50</integer>
-                <key>interval</key>
-                <integer>80</integer>
-            </dict>
-        </array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.382412</real>
+			<real>30.477655</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -1280,20 +1380,22 @@
 			<real>1052.5</real>
 			<real>1909.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>centerX+downY</string>
         <key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>51</integer>
-                <key>interval</key>
-                <integer>130</integer>
-            </dict>
-        </array>
+		<array>
+			<dict>
+				<key>station</key>
+				<integer>51</integer>
+				<key>interval</key>
+				<integer>130</integer>
+			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.376674</real>
+			<real>30.468987</real>
+		</array>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -1305,20 +1407,22 @@
 			<real>887.5</real>
 			<real>1908.5</real>
 		</array>
-		<key>labelPosition</key>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
+        <key>labelLayoutType</key>
+        <string>downY+specialCenterX</string>
 		<key>neighbors</key>
-        <array>
-            <dict>
-                <key>station</key>
-                <integer>50</integer>
-                <key>interval</key>
-                <integer>130</integer>
-            </dict>
-        </array>
+		<array>
+			<dict>
+				<key>station</key>
+				<integer>50</integer>
+				<key>interval</key>
+				<integer>130</integer>
+			</dict>
+		</array>
+		<key>geoPosition</key>
+		<array>
+			<real>50.3671714</real>
+			<real>30.4544127</real>
+		</array>
 	</dict>
 </array>
 </plist>

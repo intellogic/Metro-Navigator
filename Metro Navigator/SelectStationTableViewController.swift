@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelectStationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class SelectStationTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     var stations: [[Subway.Station]]?
     var filteredStations: [[Subway.Station]]?
@@ -26,8 +26,6 @@ class SelectStationViewController: UIViewController, UITableViewDelegate, UITabl
         stationsTableView.keyboardDismissMode = .onDrag
         searchBar.delegate = self
         filteredStations = stations
-        // Do any additional setup after loading the view.
-        
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -49,7 +47,7 @@ class SelectStationViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let stationTableCell = stationsTableView.dequeueReusableCell(withIdentifier: "stationTableViewCell", for: indexPath) as! StationTableViewCell
+        let stationTableCell = stationsTableView.dequeueReusableCell(withIdentifier: "stationTableViewCell", for: indexPath) as! SelectStationTableViewCell
         stationTableCell.station = filteredStations![indexPath.section][indexPath.row]
         return stationTableCell
     }
@@ -76,7 +74,8 @@ class SelectStationViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if filteredStations![section].count > 0 {
-            return linesNames[section]
+            let lineName = User.city + "SubwayLine" + String(section + 1);
+            return NSLocalizedString(lineName, comment: lineName)
         } else {
             return nil
         }
@@ -92,35 +91,10 @@ class SelectStationViewController: UIViewController, UITableViewDelegate, UITabl
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func cancelSelecting(_ sender: UIBarButtonItem) {
+
+    @IBAction func cancelSelection(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
-class StationTableViewCell : UITableViewCell {
-    @IBOutlet weak var linePoint: UIImageView!
-    @IBOutlet weak var stationLabel: UILabel!
-    
-    var station: Subway.Station? {
-        didSet{
-            updateUI()
-        }
-    }
-    
-    func updateUI(){
-        linePoint.image = UIImage.point(for: station!.line)
-        stationLabel.text = station!.name
-    }
-}
