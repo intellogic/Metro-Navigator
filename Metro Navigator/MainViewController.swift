@@ -199,9 +199,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate, CLLocationMana
         locationManager.requestLocation()
     }
     
-   
-    
-    func handlePan(panRecognizer: UIPanGestureRecognizer){
+    func handlePan(panRecognizer: UIPanGestureRecognizer) {
         let location = panRecognizer.location(in: view)
         switch panRecognizer.state {
             case .began:
@@ -236,7 +234,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate, CLLocationMana
         }
     }
     
-    private func deactivateStationsBetweenSourceAndDestination(){
+    private func deactivateStationsBetweenSourceAndDestination() {
         if let path = path {
             for station in path {
                 if station.ID != source?.ID && station.ID != destination?.ID {
@@ -250,12 +248,11 @@ class MainViewController: UIViewController, UIScrollViewDelegate, CLLocationMana
         pathControlView.frame.origin = pathControlViewFrameOrigin
     }
     
-    func updatePathTableViewFrame(){
+    func updatePathTableViewFrame() {
         pathTableView.frame = CGRect(origin: CGPoint(x: 0, y: pathControlView.frame.maxY),  size: CGSize(width: view.frame.width, height: view.frame.height - pathControlView.frame.height - UIApplication.shared.statusBarFrame.height))
-
     }
     
-    private func findPath(){
+    private func findPath() {
         if let source = source, let destination = destination, source.ID != destination.ID {
             let (newPath, time, _, _) = subway.calculatePath(from: source.ID, to: destination.ID)
             UIView.animate(withDuration: 0.5, animations: {
@@ -314,7 +311,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate, CLLocationMana
         } else {
             prepareForSelectingView(forSource: true)
         }
-
     }
     
     @IBAction func cancelDestinationChoice(_ sender: UIButton) {
@@ -325,16 +321,15 @@ class MainViewController: UIViewController, UIScrollViewDelegate, CLLocationMana
         }
     }
     
-    private func prepareForSelectingView(forSource: Bool){
+    private func prepareForSelectingView(forSource: Bool) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let selectStationViewController = storyboard.instantiateViewController(withIdentifier: "SelectStationView") as! SelectStationTableViewController
         selectStationViewController.stations = subway.stationsByLine()
         selectStationViewController.forSource = forSource
         present(selectStationViewController, animated: true, completion: nil)
-
     }
     
-    private func deactivateSourceStation(){
+    private func deactivateSourceStation() {
         sourceLinePoint.image = nil
         sourceLabel.text = NSLocalizedString("fromLabelPlaceholder", comment: "fromLabelPlaceholder")
         sourceListOrCancelButton.imageView?.image = UIImage(named: "list_icon")
@@ -343,7 +338,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate, CLLocationMana
         }
     }
     
-    private func activateSourceStation(){
+    private func activateSourceStation() {
         if let source = source {
             sourceLinePoint.image = source.lineMark()
             sourceLabel.text = source.name
@@ -352,7 +347,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate, CLLocationMana
         }
     }
     
-    private func deactivateDestinationStation(){
+    private func deactivateDestinationStation() {
         destinationLinePoint.image = nil
         destinationLabel.text = NSLocalizedString("toLabelPaceholder", comment: "toLabelPaceholder")
         destinationListOrCancelButton.imageView?.image = UIImage(named: "list_icon")
@@ -367,7 +362,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate, CLLocationMana
         }
     }
     
-    private func hideStationsOutsidePath(){
+    private func hideStationsOutsidePath() {
         if let path = path {
             for station in subway.stations {
                 if !path.contains(where: {
@@ -392,7 +387,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate, CLLocationMana
     }
     
     
-    func handleSingleTap(recognizer: UITapGestureRecognizer){
+    func handleSingleTap(recognizer: UITapGestureRecognizer) {
         guard (source == nil || destination == nil) else {
             return
         }
@@ -409,9 +404,9 @@ class MainViewController: UIViewController, UIScrollViewDelegate, CLLocationMana
                 }
             }
 
-            if (source == nil){
+            if (source == nil) {
                 source = currentStation
-            } else if (destination == nil){
+            } else if (destination == nil) {
                 destination = currentStation
             }
         }
@@ -420,11 +415,11 @@ class MainViewController: UIViewController, UIScrollViewDelegate, CLLocationMana
 
     
     private func checkIfSomeStationIsChosen(for tapLocation: CGPoint) -> Subway.Station? {
-        if CGRect(origin: CGPoint.zero, size: mapView.image!.size).contains(tapLocation){
+        if CGRect(origin: CGPoint.zero, size: mapView.image!.size).contains(tapLocation) {
             var maxDistance = CGFloat.greatestFiniteMagnitude
             var closestStation = subway.stations.first!
             for station in subway.stations {
-                if station.label!.frame.contains(tapLocation){
+                if station.label!.frame.contains(tapLocation) {
                     return station
                 }
                 let currentDistance = tapLocation.distance(to: station.position)
@@ -460,7 +455,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate, CLLocationMana
         setImageViewAtTheCenterOfScrollView()
     }
     
-    func setImageViewAtTheCenterOfScrollView(){
+    private func setImageViewAtTheCenterOfScrollView() {
         if mapView.frame.height <= scrollView.frame.height {
             let shiftHeight = scrollView.frame.height/2.0 - scrollView.contentSize.height/2.0
             scrollView.contentInset.top = shiftHeight
@@ -469,12 +464,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate, CLLocationMana
             let shiftWidth = scrollView.frame.width/2.0 - scrollView.contentSize.width/2.0
             scrollView.contentInset.left = shiftWidth
         }
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }
@@ -495,30 +484,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-class PathTableViewCell: UITableViewCell {
-    @IBOutlet weak var stationNameLabel: UILabel!
-    @IBOutlet weak var stationInPathImageView: UIImageView!
-    
-    var station: Subway.Station? {
-        didSet {
-            updateUI()
-        }
-    }
-    
-    func updateUI(){
-        stationNameLabel.text = station?.name
-        if station!.typeInPath!.contains("Source") || station!.typeInPath!.contains("Destination") || station!.typeInPath!.contains("Transfer") {
-            stationNameLabel.font = UIFont.preferredFont(forTextStyle: .title2)
-        } else {
-            stationNameLabel.font = UIFont.systemFont(ofSize: 17)
-        }
-        let imageName =  station!.typeInPath!
-        let stationImage = UIImage(named: "Path Icons/" + imageName)!
-        stationInPathImageView.image = stationImage
-        imageView?.frame.size = stationImage.size
-        selectionStyle = .none
-    }
-}
+
 
 
 extension CGPoint {
