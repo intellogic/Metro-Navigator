@@ -272,7 +272,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate, CLLocationMana
         timeInMinutes += 1
         pathTimeLabel.text = String(timeInMinutes) + " " + NSLocalizedString("minutes", comment: "minutes")
         var date = Date()
-        date.addTimeInterval(TimeInterval(time))
+        date.addTimeInterval(TimeInterval(time + 60))
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .short
         dateFormatter.locale = Locale.current
