@@ -2,7 +2,7 @@
 
 MacPaw internship application project
 
-This application will help you to find the fastest route between any 2 stations of Kyiv subway.
+This application will help you to find the fastest route between any 2 stations of Kyiv metro.
 
 # General features
 1) Interactive map of Kyiv metro
