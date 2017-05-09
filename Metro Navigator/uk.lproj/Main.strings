@@ -1,9 +1,9 @@
 
 /* Class = "UILabel"; text = "To"; ObjectID = "2s8-aN-X3R"; */
-"2s8-aN-X3R.text" = " Звiдки";
+"2s8-aN-X3R.text" = "Звiдки";
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "BXg-7k-d0d"; */
-"BXg-7k-d0d.normalTitle" = "Відміна";
+"BXg-7k-d0d.normalTitle" = "Закрити";
 
 /* Class = "UILabel"; text = "N mins"; ObjectID = "EZR-xw-w9T"; */
 "EZR-xw-w9T.text" = "N mins";
@@ -15,7 +15,7 @@
 "agD-uZ-fVc.text" = "Label";
 
 /* Class = "UILabel"; text = "From"; ObjectID = "hPR-tZ-Odh"; */
-"hPR-tZ-Odh.text" = " Куди";
+"hPR-tZ-Odh.text" = "Куди";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "kUu-BJ-fGX"; */
 "kUu-BJ-fGX.text" = "Label";

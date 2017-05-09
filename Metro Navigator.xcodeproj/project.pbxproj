@@ -15,7 +15,6 @@
 		BA4A93071EA4D7BD00E10055 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4A93061EA4D7BD00E10055 /* MainViewController.swift */; };
 		BA4A930A1EA4D7BD00E10055 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4A93081EA4D7BD00E10055 /* Main.storyboard */; };
 		BA4A930C1EA4D7BD00E10055 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4A930B1EA4D7BD00E10055 /* Assets.xcassets */; };
-		BA4A930F1EA4D7BD00E10055 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4A930D1EA4D7BD00E10055 /* LaunchScreen.storyboard */; };
 		BAB8A7AB1EBBD11800AFDBC7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAB8A7AD1EBBD11800AFDBC7 /* Localizable.strings */; };
 		BAC759AA1EC0E8AA00CB93F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC759A91EC0E8AA00CB93F7 /* User.swift */; };
 		BAD25B0E1EAA84B80011E13E /* SubwayMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD25B0D1EAA84B80011E13E /* SubwayMapView.swift */; };
@@ -35,7 +34,6 @@
 		BA4A93061EA4D7BD00E10055 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BA4A93091EA4D7BD00E10055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA4A930B1EA4D7BD00E10055 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BA4A930E1EA4D7BD00E10055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA4A93101EA4D7BD00E10055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAB8A7AC1EBBD11800AFDBC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BAB8A7AE1EBBD12400AFDBC7 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 			children = (
 				BA4A93041EA4D7BD00E10055 /* AppDelegate.swift */,
 				BAB8A7AD1EBBD11800AFDBC7 /* Localizable.strings */,
-				BA4A930D1EA4D7BD00E10055 /* LaunchScreen.storyboard */,
 				BA4A93101EA4D7BD00E10055 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -206,7 +203,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAB8A7AB1EBBD11800AFDBC7 /* Localizable.strings in Resources */,
-				BA4A930F1EA4D7BD00E10055 /* LaunchScreen.storyboard in Resources */,
 				BA4A930C1EA4D7BD00E10055 /* Assets.xcassets in Resources */,
 				BA4A930A1EA4D7BD00E10055 /* Main.storyboard in Resources */,
 				BA2C65B21EABC5B700D735EF /* Kyiv.plist in Resources */,
@@ -243,14 +239,6 @@
 				BA4925981EBD0E8800694F85 /* ru */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		BA4A930D1EA4D7BD00E10055 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BA4A930E1EA4D7BD00E10055 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		BAB8A7AD1EBBD11800AFDBC7 /* Localizable.strings */ = {

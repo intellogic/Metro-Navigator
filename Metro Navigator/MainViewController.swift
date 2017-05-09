@@ -156,7 +156,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate, CLLocationMana
             }
         } else {
             getLocationButton.isEnabled = false
-            
         }
    
         
@@ -478,9 +477,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
 }
-
-
-
 
 extension CGPoint {
     func distance(to point: CGPoint) -> CGFloat {
