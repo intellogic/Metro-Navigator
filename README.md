@@ -12,4 +12,4 @@ Metro Navigator helps you to find the fastest route between any 2 stations of Ky
 5) Available languages: Ukrainian, English and Russian (depends on current locale)
 
 # Screenshots
-[Imgur](http://i.imgur.com/0SmALm7.gifv)
+[Imgur]!(http://i.imgur.com/0SmALm7.gifv)
