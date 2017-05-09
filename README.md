@@ -1,4 +1,4 @@
-# Metro-Navigator
+# Metro Navigator
 
 MacPaw internship application project
 
