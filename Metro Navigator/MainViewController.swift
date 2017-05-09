@@ -268,7 +268,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate, CLLocationMana
     }
     
     private func setPathAndArrivalTime(for time: Int){
-        let timeInMinutes = time / 60
+        var timeInMinutes = time / 60
+        timeInMinutes += 1
         pathTimeLabel.text = String(timeInMinutes) + " " + NSLocalizedString("minutes", comment: "minutes")
         var date = Date()
         date.addTimeInterval(TimeInterval(time))

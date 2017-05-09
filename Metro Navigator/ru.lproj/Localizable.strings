@@ -8,8 +8,8 @@
 
 "Arrival at" = "Прибытие в";
 "minutes" = "мин";
-"fromLabelPlaceholder" = " Откуда";
-"toLabelPaceholder" = " Куда";
+"fromLabelPlaceholder" = "Откуда";
+"toLabelPaceholder" = "Куда";
 
 //Kyiv Subway Lines
 "KyivSubwayLine1" = "Святошинско-Броварская";

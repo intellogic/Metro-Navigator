@@ -177,16 +177,8 @@ class Subway {
         }
         
         func lineMark() -> UIImage {
-            switch line {
-            case "Red":
-                return UIImage(named: "red_line_point")!
-            case "Green":
-                return UIImage(named: "green_line_point")!
-            case "Blue":
-                return UIImage(named: "blue_line_point")!
-            default:
-                return UIImage()
-            }
+            let imageName = line + "LinePoint"
+            return UIImage(named: imageName)!
         }
     }
 }
