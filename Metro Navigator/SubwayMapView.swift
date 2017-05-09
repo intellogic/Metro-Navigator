@@ -12,8 +12,7 @@ class SubwayMapView: UIImageView {
   
     let stationPointRadius: CGFloat = 30.05
     var labels: [UILabel] = []
-    
-    
+    var locationMarkImageView: UIImageView?
     
     convenience init(){
         self.init(frame: CGRect.zero)
@@ -51,6 +50,20 @@ class SubwayMapView: UIImageView {
         station.label?.alpha = 1.0
     }
     
+    func putLocationMark(on station: Subway.Station){
+        let locationMark = UIImage(named: "locationMark" + station.line)
+        if locationMarkImageView == nil {
+            locationMarkImageView = UIImageView(image: locationMark)
+            locationMarkImageView?.contentMode = .scaleAspectFit
+            self.addSubview(locationMarkImageView!)
+            locationMarkImageView?.isHidden = false
+        } else {
+            locationMarkImageView?.image = locationMark
+        }
+        locationMarkImageView?.frame.origin = CGPoint(x: station.position.x - locationMarkImageView!.frame.width / 2.0, y: station.position.y - locationMarkImageView!.frame.height / 2.0)
+
+    }
+    
     func setLabels( stations: inout [Subway.Station]){
         var number = 0    
         for station in stations {
@@ -59,13 +72,6 @@ class SubwayMapView: UIImageView {
             let layoutType: String =  station.labelLayoutType
             let label = UILabel()
             label.text = name
-            if (layoutType.contains("2Lines")) {
-                let parts = name.components(separatedBy: " ")
-                let newName = parts[0] + "\n" + parts[1]
-                label.text = newName
-                label.textAlignment = .center
-                label.numberOfLines = 0
-            }
             label.font = UIFont(name: "Helvetica", size: 45.0)
             label.layer.cornerRadius = 10
             label.clipsToBounds = true
@@ -120,36 +126,7 @@ class SubwayMapView: UIImageView {
             } else {
                 label.backgroundColor = UIColor.clear
             }
-            
-            /*
-            var layoutLabelType = ""
-            label.backgroundColor = UIColor.clear
-            switch number {
-            case 0...6, 9, 18...21, 42...49, 27,28: //leftX+centerY
-                x -= label.frame.size.width + stationPointRadius
-                y -= label.frame.size.height / 2.0
-                layoutLabelType = "leftX+centerY"
-            case 7, 8, 10, 11, 12, 14...17, 22...26, 31...33, 34...41: //rightX+centerY & transfer for 41
-                x += stationPointRadius
-                y -= label.frame.size.height / 2.0
-                layoutLabelType = "rightX+centerY"
-            case 13, 30: //downY
-                y += stationPointRadius
-                layoutLabelType = "downY"
-            case 29, 50: //centerX + downY
-                x -= label.frame.width / 2.0
-                y += stationPointRadius
-                layoutLabelType = "centerX+downY"
-            case 51: //downY + specialCenterX
-                x -= label.frame.width
-                y += stationPointRadius
-                layoutLabelType = "downY+specialCenterX"
-            default:
-                label.backgroundColor = UIColor.green
-            }
-            */
-            
-            
+           
             number += 1
             label.frame.origin = CGPoint(x: x, y: y)
             self.addSubview(label)

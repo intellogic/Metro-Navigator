@@ -11,7 +11,7 @@
 		BA1D7C091EB65FBB00887519 /* BinaryHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D7C081EB65FBB00887519 /* BinaryHeap.swift */; };
 		BA2C65B21EABC5B700D735EF /* Kyiv.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA2C65B11EABC5B700D735EF /* Kyiv.plist */; };
 		BA4A93051EA4D7BD00E10055 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4A93041EA4D7BD00E10055 /* AppDelegate.swift */; };
-		BA4A93071EA4D7BD00E10055 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4A93061EA4D7BD00E10055 /* ViewController.swift */; };
+		BA4A93071EA4D7BD00E10055 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4A93061EA4D7BD00E10055 /* MainViewController.swift */; };
 		BA4A930A1EA4D7BD00E10055 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4A93081EA4D7BD00E10055 /* Main.storyboard */; };
 		BA4A930C1EA4D7BD00E10055 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4A930B1EA4D7BD00E10055 /* Assets.xcassets */; };
 		BA4A930F1EA4D7BD00E10055 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4A930D1EA4D7BD00E10055 /* LaunchScreen.storyboard */; };
@@ -30,7 +30,7 @@
 		BA4925991EBD0E8900694F85 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BA4A93011EA4D7BD00E10055 /* Metro Navigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Metro Navigator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4A93041EA4D7BD00E10055 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BA4A93061EA4D7BD00E10055 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BA4A93061EA4D7BD00E10055 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BA4A93091EA4D7BD00E10055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA4A930B1EA4D7BD00E10055 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA4A930E1EA4D7BD00E10055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +55,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA08F4551EC1BD18009F2882 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BA4A93041EA4D7BD00E10055 /* AppDelegate.swift */,
+				BAB8A7AD1EBBD11800AFDBC7 /* Localizable.strings */,
+				BA4A930D1EA4D7BD00E10055 /* LaunchScreen.storyboard */,
+				BA4A93101EA4D7BD00E10055 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BA08F4561EC1BD5E009F2882 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BAD25B0D1EAA84B80011E13E /* SubwayMapView.swift */,
+				BA4A93081EA4D7BD00E10055 /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		BA08F4571EC1BD6C009F2882 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BAD6645A1EAE68150018FF66 /* Subway.swift */,
+				BA1D7C081EB65FBB00887519 /* BinaryHeap.swift */,
+				BAC759A91EC0E8AA00CB93F7 /* User.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BA08F4581EC1BD85009F2882 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BA4A930B1EA4D7BD00E10055 /* Assets.xcassets */,
+				BA2C65B11EABC5B700D735EF /* Kyiv.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		BA08F4591EC1BDCA009F2882 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA4A93061EA4D7BD00E10055 /* MainViewController.swift */,
+				BAFCD2D31EB1147700D58071 /* SelectStationTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BA08F45A1EC1BE35009F2882 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BA0D0EF71EBF3F8200FF512B /* SelectStationTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		BA4A92F81EA4D7BD00E10055 = {
 			isa = PBXGroup;
 			children = (
@@ -74,20 +130,12 @@
 		BA4A93031EA4D7BD00E10055 /* Metro Navigator */ = {
 			isa = PBXGroup;
 			children = (
-				BA2C65B11EABC5B700D735EF /* Kyiv.plist */,
-				BAC759A91EC0E8AA00CB93F7 /* User.swift */,
-				BA4A93041EA4D7BD00E10055 /* AppDelegate.swift */,
-				BA4A93061EA4D7BD00E10055 /* ViewController.swift */,
-				BAFCD2D31EB1147700D58071 /* SelectStationTableViewController.swift */,
-				BA0D0EF71EBF3F8200FF512B /* SelectStationTableViewCell.swift */,
-				BAD25B0D1EAA84B80011E13E /* SubwayMapView.swift */,
-				BAD6645A1EAE68150018FF66 /* Subway.swift */,
-				BA1D7C081EB65FBB00887519 /* BinaryHeap.swift */,
-				BA4A93081EA4D7BD00E10055 /* Main.storyboard */,
-				BA4A930B1EA4D7BD00E10055 /* Assets.xcassets */,
-				BA4A930D1EA4D7BD00E10055 /* LaunchScreen.storyboard */,
-				BA4A93101EA4D7BD00E10055 /* Info.plist */,
-				BAB8A7AD1EBBD11800AFDBC7 /* Localizable.strings */,
+				BA08F4571EC1BD6C009F2882 /* Model */,
+				BA08F4561EC1BD5E009F2882 /* Views */,
+				BA08F4591EC1BDCA009F2882 /* Controllers */,
+				BA08F45A1EC1BE35009F2882 /* Cells */,
+				BA08F4581EC1BD85009F2882 /* Resources */,
+				BA08F4551EC1BD18009F2882 /* Supporting Files */,
 			);
 			path = "Metro Navigator";
 			sourceTree = "<group>";
@@ -172,7 +220,7 @@
 				BA1D7C091EB65FBB00887519 /* BinaryHeap.swift in Sources */,
 				BAD25B0E1EAA84B80011E13E /* SubwayMapView.swift in Sources */,
 				BA0D0EF81EBF3F8200FF512B /* SelectStationTableViewCell.swift in Sources */,
-				BA4A93071EA4D7BD00E10055 /* ViewController.swift in Sources */,
+				BA4A93071EA4D7BD00E10055 /* MainViewController.swift in Sources */,
 				BAC759AA1EC0E8AA00CB93F7 /* User.swift in Sources */,
 				BAD6645B1EAE68150018FF66 /* Subway.swift in Sources */,
 				BAFCD2D41EB1147700D58071 /* SelectStationTableViewController.swift in Sources */,
@@ -313,6 +361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 5JN378GWYC;
 				INFOPLIST_FILE = "Metro Navigator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -327,6 +376,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 5JN378GWYC;
 				INFOPLIST_FILE = "Metro Navigator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;

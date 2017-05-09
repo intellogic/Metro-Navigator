@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 
-class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerDelegate {
+class MainViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var sourceLinePoint: UIImageView!
@@ -171,7 +171,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let currentLocation = locations.last {
+        if let currentLocation = locations.first {
             var minDistance = currentLocation.distance(from: CLLocation(latitude: subway.stations[0].latitude, longitude: subway.stations[0].longitude))
             var minDistanceStationID = 0
             for station in subway.stations {
@@ -181,10 +181,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
                     minDistanceStationID = station.ID
                 }
             }
-            if (source != nil) {
-                deactivateSourceStation()
-            }
-            source = subway.stations[minDistanceStationID]
+            
+            mapView.putLocationMark(on: subway.stations[minDistanceStationID])
+            
+            //if (source != nil) {
+              //  deactivateSourceStation()
+            //}
+            //source = subway.stations[minDistanceStationID]
         }
     }
     
@@ -418,16 +421,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
     
     private func checkIfSomeStationIsChosen(for tapLocation: CGPoint) -> Subway.Station? {
         if CGRect(origin: CGPoint.zero, size: mapView.image!.size).contains(tapLocation){
-            var index = 0
-            for view in mapView.subviews {
-                if view.frame.contains(tapLocation) {
-                    return subway.stations[index]
-                }
-                index += 1
-            }
             var maxDistance = CGFloat.greatestFiniteMagnitude
             var closestStation = subway.stations.first!
             for station in subway.stations {
+                if station.label!.frame.contains(tapLocation){
+                    return station
+                }
                 let currentDistance = tapLocation.distance(to: station.position)
                 if currentDistance < mapView.stationPointRadius * 1.5 {
                     return station
@@ -480,7 +479,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
     
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.path?.count ?? 0
     }
@@ -517,6 +516,7 @@ class PathTableViewCell: UITableViewCell {
         let stationImage = UIImage(named: "Path Icons/" + imageName)!
         stationInPathImageView.image = stationImage
         imageView?.frame.size = stationImage.size
+        selectionStyle = .none
     }
 }
 

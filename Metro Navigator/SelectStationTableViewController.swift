@@ -58,7 +58,7 @@ class SelectStationTableViewController: UIViewController, UITableViewDelegate, U
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         searchBar.resignFirstResponder()
-        let homeViewController = presentingViewController as! ViewController
+        let homeViewController = presentingViewController as! MainViewController
         if forSource {
             homeViewController.source = filteredStations![indexPath.section][indexPath.row]
         } else {
