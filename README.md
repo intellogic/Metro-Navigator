@@ -10,3 +10,7 @@ Metro Navigator helps you to find the fastest route between any 2 stations of Ky
 3) Calculating the total travel time and arrival time
 4) Finding the nearest station using location services
 5) Available languages: Ukrainian, English and Russian (depends on current locale)
+
+# Screenshots
+
+![Alt text](https://drive.google.com/file/d/0B3GyqK-GORyLVEE1NURqWUhKRlk/view?usp=sharing)
