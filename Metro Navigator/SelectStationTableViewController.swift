@@ -85,13 +85,6 @@ class SelectStationTableViewController: UIViewController, UITableViewDelegate, U
         return indices
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
     @IBAction func cancelSelection(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }

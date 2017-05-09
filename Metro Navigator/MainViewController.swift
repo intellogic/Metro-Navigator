@@ -183,11 +183,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate, CLLocationMana
             }
             
             mapView.putLocationMark(on: subway.stations[minDistanceStationID])
-            
-            //if (source != nil) {
-              //  deactivateSourceStation()
-            //}
-            //source = subway.stations[minDistanceStationID]
         }
     }
     
