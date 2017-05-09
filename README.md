@@ -13,4 +13,4 @@ Metro Navigator helps you to find the fastest route between any 2 stations of Ky
 
 # Screenshots
 
-![Alttext](https://lh6.googleusercontent.com/8LSk68YJ_cUq4LmZ2qY7mPkMCiNaBCixwooBwgXkKbjqiuyPDWKpFSv1Lav9c9Rw4EfZy85Rb5E1HM=w1712-h874-rw)
+![Alt text](https://lh6.googleusercontent.com/8LSk68YJ_cUq4LmZ2qY7mPkMCiNaBCixwooBwgXkKbjqiuyPDWKpFSv1Lav9c9Rw4EfZy85Rb5E1HM=w1712-h874-rw)
