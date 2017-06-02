@@ -1,7 +1,5 @@
 # Metro Navigator
 
-MacPaw internship application project
-
 Metro Navigator helps you to find the fastest route between any 2 stations of Kyiv metro.
 
 # General features
